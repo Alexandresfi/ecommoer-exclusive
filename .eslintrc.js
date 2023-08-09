@@ -3,12 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'next',
-    'next/core-web-vitals',
-    'plugin:prettier/recommended',
-    'plugin:react-hooks/recommended'
-  ],
+  extends: ['next', 'next/core-web-vitals', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
