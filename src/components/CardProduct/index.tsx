@@ -9,16 +9,16 @@ interface ProducProps {
     thumbnail: string;
     title: string;
     price: number;
-    oldPrice: number;
+    originalPrice: number;
   };
 }
 export function ProductItem({
-  productData: { id, thumbnail, title, price, oldPrice }
+  productData: { id, thumbnail, title, price, originalPrice }
 }: ProducProps) {
   const calcDiscount = () => {
-    const disount = oldPrice - price;
+    const disount = originalPrice - price;
 
-    const percentual = (disount / oldPrice) * 100;
+    const percentual = (disount / originalPrice) * 100;
 
     return percentual;
   };
@@ -53,7 +53,7 @@ export function ProductItem({
               {formatPrices(price)}
             </span>
             <span className="line-through text-[#7d8184eb]">
-              {formatPrices(oldPrice)}
+              {formatPrices(originalPrice)}
             </span>
           </span>
         </div>
