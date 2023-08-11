@@ -10,7 +10,7 @@ export function NaveBar() {
     }
   };
   return (
-    <nav className=" w-[30%]">
+    <nav className="max-w-[30%] w-full">
       <ul className="text-base text-black flex items-center justify-between">
         <li>
           <Link href="/" className={`${activeClassName('/')}`}>

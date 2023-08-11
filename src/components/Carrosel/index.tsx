@@ -1,62 +1,76 @@
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+'use client';
 import { ProductItem } from '../CardProduct';
+import { ProductDataProps } from '../Shelfies';
 
-interface SearchProps {
-  search: string;
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { ArrowCarousel } from './Arrows';
+
+interface ProductDataItemProps {
+  productData: ProductDataProps[];
+  offer?: boolean;
 }
 
-interface ProductDataProps {
-  id: string;
-  condition: string;
-  thumbnail: string;
-  title: string;
-  price: number;
-  originalPrice: number;
-  installments: {
-    quantity: number;
-    amount: number;
-  };
-}
-export async function Carousel({ search }: SearchProps) {
-  const fetchProduct = await fetch(
-    `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=15`
-  );
+export function Carousel({ productData, offer = false }: ProductDataItemProps) {
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    rubberband: false,
+    slides: {
+      perView: 2.3,
+      spacing: 10
+    },
+    breakpoints: {
+      '(min-width: 1024px)': {
+        slides: {
+          perView: 3.4,
+          spacing: 0
+        }
+      },
+      '(min-width: 1200px)': {
+        slides: {
+          perView: 4.5,
+          spacing: 30
+        }
+      }
+    }
+  });
 
-  const response = await fetchProduct.json();
-  const productData: ProductDataProps[] = response.results;
-
+  function isOffer() {
+    if (offer) {
+      return 'max-w-offer ml-auto';
+    } else {
+      return 'max-w-container m-auto';
+    }
+  }
   return (
-    <div className="overflow-hidden ml-auto">
-      <CarouselProvider
-        naturalSlideWidth={270}
-        naturalSlideHeight={350}
-        step={4}
-        dragStep={2}
-        totalSlides={15}
-        visibleSlides={4.5}
-        infinite={true}
+    <div className={`${!offer && 'max-w-container m-auto'}`}>
+      <ArrowCarousel
+        nextSlider={instanceRef.current?.next}
+        prevSlider={instanceRef.current?.prev}
+      />
+
+      <div
+        ref={sliderRef}
+        className={`keen-slider max-w-offer overflow-hidden w-full ${isOffer()}`}
       >
-        <Slider
-          classNameTrayWrap="flex shrink-0"
-          classNameTray="flex gap-9 lg:gap-14"
-          className="flex"
-        >
-          {productData?.map((product, index) => {
-            const productDataItem = {
-              id: product?.id,
-              thumbnail: product?.thumbnail,
-              title: product?.title,
-              price: product?.price,
-              originalPrice: product?.originalPrice
-            };
-            return (
-              <Slide index={index} key={product.id}>
-                <ProductItem productData={productDataItem} />
-              </Slide>
-            );
-          })}
-        </Slider>
-      </CarouselProvider>
+        {productData?.map((product, index) => {
+          const productDataItem = {
+            id: product?.id,
+            thumbnail: product?.thumbnail,
+            title: product?.title,
+            price: product?.price,
+            originalPrice: product?.original_price
+          };
+
+          return (
+            <ProductItem
+              productData={productDataItem}
+              key={index}
+              slider="keen-slider__slide"
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
