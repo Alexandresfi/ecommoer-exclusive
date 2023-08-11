@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.bhphotovideo.com']
+    domains: ['http2.mlstatic.com']
   }
 };
 
