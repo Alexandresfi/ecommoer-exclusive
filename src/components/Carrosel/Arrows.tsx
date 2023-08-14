@@ -1,11 +1,11 @@
 'use client';
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react';
-interface TesteProps {
+interface ArrowsProps {
   nextSlider: (() => void) | undefined;
   prevSlider: (() => void) | undefined;
 }
 
-export function ArrowCarousel({ nextSlider, prevSlider }: TesteProps) {
+export function ArrowCarousel({ nextSlider, prevSlider }: ArrowsProps) {
   return (
     <div className="max-w-container m-auto hidden lg:flex lg:items-center lg:justify-end lg:gap-1 lg:translate-y-[-61px]">
       <button

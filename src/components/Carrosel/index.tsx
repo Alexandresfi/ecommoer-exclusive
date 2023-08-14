@@ -16,10 +16,22 @@ export function Carousel({ productData, offer = false }: ProductDataItemProps) {
     loop: true,
     rubberband: false,
     slides: {
-      perView: 2.3,
-      spacing: 10
+      perView: 2.2,
+      spacing: 5
     },
     breakpoints: {
+      '(min-width: 714px)': {
+        slides: {
+          perView: 3.2,
+          spacing: 7
+        }
+      },
+      '(min-width: 840px)': {
+        slides: {
+          perView: 4,
+          spacing: 0
+        }
+      },
       '(min-width: 1024px)': {
         slides: {
           perView: 3.4,
@@ -43,7 +55,7 @@ export function Carousel({ productData, offer = false }: ProductDataItemProps) {
     }
   }
   return (
-    <div className={`${!offer && 'max-w-container m-auto'}`}>
+    <div className={`${!offer ? 'max-w-container m-auto' : ''} pl-5 lg:pl-0`}>
       <ArrowCarousel
         nextSlider={instanceRef.current?.next}
         prevSlider={instanceRef.current?.prev}

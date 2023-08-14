@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { WhishList } from './wishList';
+import { WhishList } from './Components/WishList/wishList';
+import { BuyButton } from './Components/BuyButton';
 
 import { formatPrices } from '@/utils/formatPrice';
 import './styles.css';
@@ -35,8 +36,8 @@ export function ProductItem({
 
   return (
     <article>
-      <div className={`relative max-w-[270px] ${slider}`}>
-        <div className="absolute top-3 flex justify-between items-center px-3 max-w-[270px] w-full">
+      <div className={`${slider}`}>
+        <div className="absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3 max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full">
           {price === originalPrice || originalPrice === null ? (
             <div />
           ) : (
@@ -46,19 +47,14 @@ export function ProductItem({
           )}
           <WhishList />
         </div>
+        <BuyButton className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[180px] lg:top-[237px] lg:opacity-0 transition-opacity duration-300" />
         <Link
-          href={`/product/${id}`}
-          className="max-w-[270px] h-[350px] flex flex-col gap-4"
+          href={`/product/${title}`}
+          className="max-w-[177px] md:max-w-[200px] lg:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4"
           prefetch={false}
         >
-          <div className="h-[350px] bg-white-primary m-auto">
-            <Image
-              src={thumbnail}
-              width={172}
-              height={180}
-              alt={title}
-              className="m-[49px]"
-            />
+          <div className="h-64 lg:h-[278px] bg-white-primary m-auto flex items-center justify-center  w-full">
+            <Image src={thumbnail} width={172} height={180} alt={title} />
           </div>
 
           <div>

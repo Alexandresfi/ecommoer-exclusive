@@ -26,6 +26,9 @@ const config: Config = {
       maxWidth: {
         container: '1170px',
         offer: 'calc(100vw - ((100vw - 1180px) / 2))'
+      },
+      screens: {
+        md: '714px'
       }
     }
   },

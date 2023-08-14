@@ -4,3 +4,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+article:hover button[type="button"] {
+  opacity: 1;
+}
