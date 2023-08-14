@@ -13,7 +13,7 @@ export function OfferCounter() {
   });
 
   function StartTIme() {
-    const [nextDay, dayAfterNext] = getNextTwoDays();
+    const [_, dayAfterNext] = getNextTwoDays();
 
     const countdownDate = new Date(dayAfterNext).getTime();
 
@@ -44,13 +44,17 @@ export function OfferCounter() {
   }, [timer.seconds]);
 
   return (
-    <div className="flex items-end gap-4 h-[51px]">
+    <div className="flex items-end gap-4 lg:h-[51px]">
       <ComponentTime title="Dias" value={timer.days} />
-      <span className="text-orange-secondary font-bold text-2xl pb-px">:</span>
+      <span className="text-orange-secondary mb-1 font-bold lg:text-2xl lg:mb-0">
+        :
+      </span>
       <ComponentTime title="Horas" value={timer.hours} />
-      <span className="text-orange-secondary font-bold text-2xl pb-px">:</span>
+      <span className="text-orange-secondary mb-1 font-bold lg:text-2xl lg:mb-0">
+        :
+      </span>
       <ComponentTime title="Minutos" value={timer.minutes} />
-      <span className="text-orange-secondary font-bold text-2xl pb-px blinkingTime">
+      <span className="text-orange-secondary mb-1 font-bold lg:text-2xl lg:mb-0 blinkingTime">
         :
       </span>
       <ComponentTime title="segundos" value={timer.seconds} />
