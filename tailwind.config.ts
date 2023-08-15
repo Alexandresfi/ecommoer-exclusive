@@ -20,7 +20,8 @@ const config: Config = {
           default: '#fff'
         },
         orange: {
-          secondary: '#DB4444'
+          secondary: '#DB4444',
+          'secondaty-hover': '#E07575'
         }
       },
       maxWidth: {

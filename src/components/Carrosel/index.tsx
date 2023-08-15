@@ -11,7 +11,7 @@ interface ProductDataItemProps {
   offer?: boolean;
 }
 
-export function Carousel({ productData, offer = false }: ProductDataItemProps) {
+export function Carousel({ productData, offer }: ProductDataItemProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     rubberband: false,
