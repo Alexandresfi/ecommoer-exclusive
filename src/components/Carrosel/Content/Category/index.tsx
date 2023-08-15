@@ -2,6 +2,8 @@
 import Link from 'next/link';
 
 import {
+  ArrowLeft,
+  ArrowRight,
   Backpack,
   Camera,
   DesktopTower,
@@ -17,8 +19,6 @@ import {
 
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-
-import { ArrowCarousel } from '../../Arrows';
 
 export function CategoryCarousel() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -121,10 +121,21 @@ export function CategoryCarousel() {
 
   return (
     <div className="max-w-container m-auto pl-5 lg:pl-0">
-      <ArrowCarousel
-        nextSlider={instanceRef.current?.next}
-        prevSlider={instanceRef.current?.prev}
-      />
+      <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-1 lg:translate-y-[-61px]">
+        <button
+          onClick={() => instanceRef.current?.prev()}
+          className="lg:rounded-full lg:bg-white-primary flex justify-center items-center w-9 h-9 hover:drop-shadow-md "
+        >
+          {' '}
+          <ArrowLeft size={20} alt="prev slider" />{' '}
+        </button>
+        <button
+          onClick={() => instanceRef.current?.next()}
+          className="lg:rounded-full lg:bg-white-primary flex justify-center items-center w-9 h-9 hover:drop-shadow-md "
+        >
+          <ArrowRight size={20} alt="next slider" />
+        </button>
+      </div>
 
       <div
         ref={sliderRef}

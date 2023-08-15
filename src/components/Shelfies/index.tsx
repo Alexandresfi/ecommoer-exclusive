@@ -6,6 +6,8 @@ interface SearchProps {
   search: string;
   offer?: boolean;
   line?: 'offer' | 'category' | null;
+  title: string;
+  subtitle: string;
 }
 
 export interface ProductDataProps {
@@ -24,7 +26,9 @@ export interface ProductDataProps {
 export async function Shelf({
   search,
   offer = false,
-  line = null
+  line = null,
+  title,
+  subtitle
 }: SearchProps) {
   const fetchProduct = await fetch(
     `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=15`
@@ -43,7 +47,7 @@ export async function Shelf({
 
   return (
     <div>
-      <Header title="Smartfones e acessórios" subTitle="Hoje" counter />
+      <Header title={title} subTitle={subtitle} counter={offer} />
       <Carousel productData={productData} offer={offer} />
       <SeeMoreButton category={search}>Ver todos os produtos</SeeMoreButton>
       {line === null ? null : <span className={toggleBorderBotton()} />}
