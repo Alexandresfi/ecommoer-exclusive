@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import './styles.css';
 import { Header } from '@/components/Shelfies/Components/Header';
+import { HandleImg } from './handleImg';
 
 export function Moisaico() {
   return (
@@ -26,31 +27,19 @@ export function Moisaico() {
           />
         </Link>
 
-        <Link
+        <HandleImg
           href="/search/alto-falante amazon"
-          prefetch={false}
-          className="phone"
-        >
-          <Image
-            src="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/366020718_122099954030016045_6291465260317602623_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=JWkxpLLUMOoAX_UKSKr&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfDm41P0DKvNl-9CyaWwU2QyNwZDvngulmWvnJJlLcb_Sw&oe=64E0762B"
-            width={270}
-            height={284}
-            alt="alto-falantes sem fio amazon"
-          />
-        </Link>
+          nameGrid="phone"
+          desktopSrc="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/366020718_122099954030016045_6291465260317602623_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=JWkxpLLUMOoAX_UKSKr&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfDm41P0DKvNl-9CyaWwU2QyNwZDvngulmWvnJJlLcb_Sw&oe=64E0762B"
+          mobileSrc="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/366712592_122100241064016045_7625653874886988153_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=zQ_FjBWPHbkAX_SWWy6&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfCl3irdraOt-YKr_CwfjSC_kzjCYsz26sUMvcuhq4C4ZQ&oe=64E0CD4E"
+        />
 
-        <Link
+        <HandleImg
           href="/search/perfume gucci intense"
-          prefetch={false}
-          className=" perfume"
-        >
-          <Image
-            src="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/366721509_122099954036016045_2154770625591380574_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=H0gw-MkSEWsAX-oYDkL&_nc_oc=AQmFrRR5JDhuB_NR1yGBq8QOImI3y-pTvlE4M5hIRWp1_H9SeII9-HVYrzY1rOD1nF8&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfBEIC3WLqWKEGuIudUlVAa9SAy83cU-Hc_QgI2UPbDOJw&oe=64E0AA60"
-            width={270}
-            height={284}
-            alt="perfumes"
-          />
-        </Link>
+          nameGrid="perfume"
+          desktopSrc="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/366721509_122099954036016045_2154770625591380574_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=H0gw-MkSEWsAX-oYDkL&_nc_oc=AQmFrRR5JDhuB_NR1yGBq8QOImI3y-pTvlE4M5hIRWp1_H9SeII9-HVYrzY1rOD1nF8&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfBEIC3WLqWKEGuIudUlVAa9SAy83cU-Hc_QgI2UPbDOJw&oe=64E0AA60"
+          mobileSrc="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/368033859_122100241058016045_1723528434707066482_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=iMb2orr3BBMAX_V96D9&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfAM-b6mHu1-7o3KH3WeddNT9_EdjN-eW8xZmw1HiIvdEQ&oe=64E14AE9"
+        />
       </div>
     </div>
   );

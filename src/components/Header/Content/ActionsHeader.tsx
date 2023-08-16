@@ -1,30 +1,16 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import {
-  MagnifyingGlass,
-  Heart,
-  ShoppingCart,
-  User
-} from '@phosphor-icons/react';
+import { Heart, ShoppingCart, User } from '@phosphor-icons/react';
 import Link from 'next/link';
+import { SearchInput } from './Search';
 
 export function HeaderActions() {
   const pathname = usePathname();
   return (
     <div className="flex items-center gap-6">
-      <div className="flex justify-between items-center py-[7px] px-3 bg-white-secondary max-w-[246px] w-full h-8 rounded">
-        <input
-          type="text"
-          name="search"
-          className="bg-white-secondary"
-          placeholder="O que você procura?"
-        />
-        <button>
-          <MagnifyingGlass size={25} />
-        </button>
-      </div>
+      <SearchInput />
 
-      <div className="flex items-center gap-1.5">
+      <div className="hidden md:flex items-center gap-1.5">
         <Link
           href="/wishlist"
           className="w-8 h-8 flex justify-center items-center"

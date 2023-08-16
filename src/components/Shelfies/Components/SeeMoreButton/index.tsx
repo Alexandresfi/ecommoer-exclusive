@@ -17,7 +17,7 @@ export function SeeMoreButton({ children, category, ...res }: ButtonProps) {
     <button
       {...res}
       onClick={handleClickLink}
-      className="bg-orange-secondary text-white-default flex justify-center items-center rounded py-4 px-12 m-auto mt-[60px] hover:bg-orange-secondaty-hover transition-colors"
+      className="bg-orange-secondary text-white-default flex justify-center items-center rounded py-4 px-12 m-auto my-[35px] hover:bg-orange-secondaty-hover transition-colors"
     >
       {children}
     </button>
