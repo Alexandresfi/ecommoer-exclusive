@@ -4,14 +4,15 @@ import { ProductDataProps } from '../Shelfies';
 
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import { ArrowCarousel } from './Arrows';
+
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react';
 
 interface ProductDataItemProps {
   productData: ProductDataProps[];
   offer?: boolean;
 }
 
-export function Carousel({ productData, offer = false }: ProductDataItemProps) {
+export function Carousel({ productData, offer }: ProductDataItemProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     rubberband: false,
@@ -56,10 +57,21 @@ export function Carousel({ productData, offer = false }: ProductDataItemProps) {
   }
   return (
     <div className={`${!offer ? 'max-w-container m-auto' : ''} pl-5 lg:pl-0`}>
-      <ArrowCarousel
-        nextSlider={instanceRef.current?.next}
-        prevSlider={instanceRef.current?.prev}
-      />
+      <div className="max-w-container m-auto hidden lg:flex lg:items-center lg:justify-end lg:gap-1 lg:translate-y-[-61px]">
+        <button
+          onClick={() => instanceRef.current?.prev()}
+          className="lg:rounded-full lg:bg-white-primary flex justify-center items-center w-9 h-9 hover:drop-shadow-md "
+        >
+          {' '}
+          <ArrowLeft size={20} alt="prev slider" />{' '}
+        </button>
+        <button
+          onClick={() => instanceRef.current?.next()}
+          className="lg:rounded-full lg:bg-white-primary flex justify-center items-center w-9 h-9 hover:drop-shadow-md "
+        >
+          <ArrowRight size={20} alt="next slider" />
+        </button>
+      </div>
 
       <div
         ref={sliderRef}
