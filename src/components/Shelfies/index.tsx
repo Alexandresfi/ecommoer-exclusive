@@ -39,9 +39,9 @@ export async function Shelf({
 
   function toggleBorderBotton() {
     if (line === 'offer') {
-      return 'border-b-[1px] pt-[60px] h-px block max-w-container m-auto';
+      return 'border-b-[1px] mt-[35px] h-px block max-w-container m-auto';
     } else {
-      return 'border-b-[1px] pt-[70px] h-px block max-w-container m-auto';
+      return 'border-b-[1px] mt-[35px] h-px block max-w-container m-auto';
     }
   }
 
