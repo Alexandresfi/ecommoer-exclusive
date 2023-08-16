@@ -1,0 +1,23 @@
+.ps5 {
+  grid-area: ps5;
+}
+
+.woman {
+  grid-area: woman;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.perfume {
+  grid-area: perfume;
+}
+
+.mosaico {
+  grid-template-areas: 
+    "ps5 woman woman"
+    "ps5 phone perfume"
+  ;
+}
+
