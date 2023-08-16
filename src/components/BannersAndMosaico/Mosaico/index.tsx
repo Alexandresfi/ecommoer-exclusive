@@ -9,12 +9,13 @@ export function Moisaico() {
     <div className="mt-[35px] mb-[35px]">
       <Header title="Novidades" subTitle="Veja o que tem de novo" />
       <div className="flex flex-col items-center lg:grid max-w-container gap-[30px] m-auto mosaico px-5 lg:px-0">
-        <Link href="/search/ps5" prefetch={false} className=" ps5">
+        <Link href="/search/ps5" prefetch={false} className=" ps5 md:h-[600px]">
           <Image
             src="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/367419759_122099954066016045_3790124209147070857_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=Kp7I3Z_1qYEAX8BQJI0&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfCLko7ym1ukpISNqPYkGW8PxK2eBII7__JyGcBdNnOoEg&oe=64E09972"
             width={570}
             height={600}
             alt="PS5"
+            className="lg:object-fill lg:h-[600px]"
           />
         </Link>
 

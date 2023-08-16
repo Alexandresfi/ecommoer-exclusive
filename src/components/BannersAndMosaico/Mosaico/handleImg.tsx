@@ -22,7 +22,7 @@ export function HandleImg({ href, nameGrid, desktopSrc, mobileSrc }: ImgProps) {
     <Link
       href={href}
       prefetch={false}
-      className={`${nameGrid} w-[-webkit-fill-available] lg:w-auto`}
+      className={`${nameGrid} max-w-[570px] w-full lg:max-w-none lg:w-auto`}
     >
       <Image
         src={src}
