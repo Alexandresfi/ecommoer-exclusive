@@ -36,7 +36,7 @@ export async function Shelf({
   subtitle
 }: SearchProps) {
   const fetchProduct = await fetch(
-    `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=15`
+    `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=25`
   );
 
   const response = await fetchProduct.json();
