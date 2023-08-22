@@ -30,7 +30,6 @@ export default function Home() {
       />
       <BannerAndMosaico type="mosaico" />
       <InfosShop />
-      <Footer />
     </>
   );
 }

@@ -17,9 +17,14 @@ export interface ProductDataProps {
   title: string;
   price: number;
   original_price: number;
-  installments: {
-    quantity: number;
-    amount: number;
+  seller: {
+    seller_reputation: {
+      transactions: {
+        ratings: {
+          positive: number;
+        };
+      };
+    };
   };
 }
 

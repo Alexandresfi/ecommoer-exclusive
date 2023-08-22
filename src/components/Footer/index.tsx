@@ -1,8 +1,9 @@
 'use client';
 
-import { Copyright, PaperPlaneRight } from '@phosphor-icons/react';
 import Link from 'next/link';
 import Image from 'next/image';
+
+import { Copyright, PaperPlaneRight } from '@phosphor-icons/react';
 
 export function Footer() {
   return (
