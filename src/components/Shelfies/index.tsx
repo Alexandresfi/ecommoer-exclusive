@@ -17,9 +17,14 @@ export interface ProductDataProps {
   title: string;
   price: number;
   original_price: number;
-  installments: {
-    quantity: number;
-    amount: number;
+  seller: {
+    seller_reputation: {
+      transactions: {
+        ratings: {
+          positive: number;
+        };
+      };
+    };
   };
 }
 
@@ -31,7 +36,7 @@ export async function Shelf({
   subtitle
 }: SearchProps) {
   const fetchProduct = await fetch(
-    `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=15`
+    `https://api.mercadolibre.com/sites/MLB/search?category=${search}&limit=25`
   );
 
   const response = await fetchProduct.json();

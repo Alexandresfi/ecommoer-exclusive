@@ -1,0 +1,9 @@
+.TextLimit {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5; /* Número de linhas desejado */
+  max-height: 120px; /* Altura equivalente a três linhas de texto */
+  max-width: 376px;
+}

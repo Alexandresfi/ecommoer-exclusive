@@ -83,7 +83,9 @@ export function Carousel({ productData, offer }: ProductDataItemProps) {
             thumbnail: product?.thumbnail,
             title: product?.title,
             price: product?.price,
-            originalPrice: product?.original_price
+            originalPrice: product?.original_price,
+            reputation:
+              product?.seller.seller_reputation.transactions.ratings.positive
           };
 
           return (
