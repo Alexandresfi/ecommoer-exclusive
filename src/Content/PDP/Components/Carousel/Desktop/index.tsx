@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { ImgCarousel } from './CarouselImg';
 
-interface Props {
+export interface Props {
   pictures: {
     url: string;
   }[];
@@ -13,9 +13,11 @@ interface Props {
 
 export function ContainerImages({ pictures }: Props) {
   const [changeImg, setChangeImg] = useState<string>(pictures[0].url);
+
   function handleClickImg(url: string) {
     setChangeImg(url);
   }
+
   return (
     <div className="flex gap-[30px]">
       <ImgCarousel pictures={pictures} handleChangeImg={handleClickImg} />

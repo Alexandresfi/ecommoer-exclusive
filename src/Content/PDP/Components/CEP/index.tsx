@@ -4,7 +4,7 @@ import { ArrowsCounterClockwise, Truck } from '@phosphor-icons/react';
 //https://www.npmjs.com/package/correios-brasil Ver isso para colocar a consulta do valor do frete
 export function Delivery() {
   return (
-    <ul className="border rounded w-[400px]">
+    <ul className="border rounded">
       <li className="text-black px-4 py-6 flex items-center gap-4 border-b">
         <Truck size={30} />
         <label

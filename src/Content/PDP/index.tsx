@@ -1,16 +1,17 @@
 import { Inter } from 'next/font/google';
 
-import { InfoProduct } from './Components/Desktop/Colum';
 import { Reputation } from '@/components/ProdutReputation';
+import { Shelf } from '@/components/Shelfies';
+import { ContainerCarousel } from './Components/Carousel';
 import { Quantity } from './Components/Quantity';
 import { BuyButtonPDP } from './Components/BuyButton';
 import { WhishListPDP } from './Components/WishList';
 import { Delivery } from './Components/CEP';
+import { DataSheet } from './Components/Datrasheet';
 
 import { formatPrices } from '@/utils/formatPrice';
 
 import './styles.css';
-import { Shelf } from '@/components/Shelfies';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,10 +66,10 @@ export async function ContainerPDP({ id, reputation }: Props) {
 
   return (
     <div className="max-w-container m-auto text-black">
-      <div className=" flex">
-        <InfoProduct pictures={product.pictures} />
+      <div className=" flex flex-col px-5 lg:px-0 md:flex-row">
+        <ContainerCarousel pictures={product.pictures} />
 
-        <div className="ml-[3%] flex flex-col gap-4">
+        <div className="md:ml-[1%] lg:ml-[3%] flex flex-col gap-4">
           <h1
             className="text-2xl font-semibold tracking-[0.72px]"
             style={inter.style}
@@ -78,6 +79,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
 
           <div className="flex items-center gap-4">
             <Reputation reputation={reputation} />
+
             <span className=" text-green-500 text-sm opacity-60 before:content-['|'] before:mr-4 before:text-white-secondary before:opacity-100 before:font-bold">
               {product.status === 'active' || product.status === 'paused'
                 ? 'Em estoque'
@@ -112,7 +114,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 px-5 lg:px-0">
         <article className="my-4">
           <h1 className="text-2xl font-semibold tracking-[0.72px] mb-4">
             Descrição do Produto
@@ -120,27 +122,10 @@ export async function ContainerPDP({ id, reputation }: Props) {
           <p className="text-lg font-medium">{description}</p>
         </article>
 
-        <article>
-          <h1 className="text-2xl font-semibold tracking-[0.72px] mb-4">
-            Ficha técnica
-          </h1>
-
-          <ul className="odd:bg-white-primary">
-            <li className="flex gap-4 px-3 py-4">
-              <p>{product.warranty.split(':')[0]} :</p>
-              <p>{product.warranty.split(':')[1]}</p>
-            </li>
-          </ul>
-
-          {product.attributes.map((attribute, index) => (
-            <ul key={index} className="odd:bg-white-primary">
-              <li className="flex gap-4 px-3 py-4">
-                <p>{attribute.name} :</p>
-                <p>{attribute.value_name}</p>
-              </li>
-            </ul>
-          ))}
-        </article>
+        <DataSheet
+          attributes={product.attributes}
+          warranty={product?.warranty}
+        />
       </div>
 
       <Shelf
