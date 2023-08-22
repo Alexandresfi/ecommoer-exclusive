@@ -1,4 +1,6 @@
 import { BannerAndMosaico } from '@/components/BannersAndMosaico';
+import { Footer } from '@/components/Footer';
+import { InfosShop } from '@/components/InfoComponent';
 import { Shelf } from '@/components/Shelfies';
 import { CategoryShelf } from '@/components/Shelfies/Content/Categories';
 
@@ -27,6 +29,8 @@ export default function Home() {
         subtitle="Informática"
       />
       <BannerAndMosaico type="mosaico" />
+      <InfosShop />
+      <Footer />
     </>
   );
 }

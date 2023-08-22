@@ -8,7 +8,7 @@ import LogoIcon from '../../../../assets/Logo.svg';
 
 export function DesktopHeader() {
   return (
-    <header className="flex justify-between items-center pt-10 pb-4 border-b border-white-primary max-w-container m-auto w-full">
+    <header className="flex justify-between items-center pt-10 pb-4 md:px-5 lg:px-0 border-b border-white-primary max-w-container m-auto w-full">
       <Link href="/">
         <Image src={LogoIcon} width={118} height={24} alt="logo Exclusive" />
       </Link>
