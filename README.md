@@ -6,8 +6,7 @@
  </h2>
  
  <p> 
-   Atualmente o processo está em andamento.
-  Layout inspirado do figma, <a href="[https://www.figma.com/file/3rb6bhlSxPhOlJwhfv9jPK/Pok%C3%A9dex-(Community)?type=design&node-id=0-1&t=LOcNJJafKYAKzjzO-0](https://www.figma.com/file/AmjMrV6esAwZg9UOotq3xJ/Full-E-Commerce-Website-UI-UX-Design-(Community)-(Copy)?node-id=1%3A3&mode=dev)" > acesse </a>
+   Atualmente o projeto está em andamento.
  </p>
 
 <h2> 
