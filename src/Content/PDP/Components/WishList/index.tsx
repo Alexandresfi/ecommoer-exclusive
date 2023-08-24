@@ -6,9 +6,9 @@ import { Heart } from '@phosphor-icons/react';
 export function WhishListPDP() {
   const [checked, setChecked] = useState(false);
 
-  const handleClienkChecked = () => {
+  function handleClienkChecked() {
     setChecked((state) => !state);
-  };
+  }
 
   return (
     <button
