@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <p>Loading da PDP...</p>;
+  return <p>Carregando Components...</p>;
 }
