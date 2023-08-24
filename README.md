@@ -15,11 +15,10 @@
 
 - <strong> `Home com Shelfie e banners` (Finalizado) </strong>
 - <strong> `Shelf com contador de oferta` (Finalizado) </strong>
-- <strong> `Shelf com contador de oferta` (Finalizado) </strong>
 - <strong> `Página de Produto (PDP)` (Finalizado)</strong>
 - <strong> `Minicart` (Em Aberto) </strong>
 - <strong> `Simulador de Frete` (Em Aberto) </strong>
-- <strong> `Página de Resultado de busca` (Em Aberto)</strong>
+- <strong> `Página de Resultado de busca` (Em Andamento)</strong>
 - <strong> `Página de Resultado de categoria` (Em Aberto)</strong>
 
 
