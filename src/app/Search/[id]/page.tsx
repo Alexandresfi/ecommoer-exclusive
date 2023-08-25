@@ -1,3 +1,5 @@
+import { ContainerResultSearch } from '@/Content/Search';
+
 interface ResultPagePros {
   params: {
     id: string;
@@ -5,5 +7,9 @@ interface ResultPagePros {
 }
 
 export default function SearchResult({ params: { id } }: ResultPagePros) {
-  return <h1 className="text-black">Futura Search Result Page</h1>;
+  return (
+    <div className="max-w-container m-auto px-5 lg:px-0">
+      <ContainerResultSearch productName={id} />
+    </div>
+  );
 }

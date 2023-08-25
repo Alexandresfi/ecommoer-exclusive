@@ -1,3 +1,4 @@
+'use client';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { ButtonHTMLAttributes } from 'react';
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { getNextTwoDays } from '@/utils/getTimeCounterTime';
 import { ComponentTime } from './Timer';
 

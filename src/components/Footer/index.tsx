@@ -1,9 +1,8 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Copyright, PaperPlaneRight } from '@phosphor-icons/react';
+import { CopyRight } from './CopyRight';
+import { SendEmail } from './Email';
 
 export function Footer() {
   return (
@@ -22,18 +21,8 @@ export function Footer() {
                     Ganhe 10% de desconto no seu primeiro pedido
                   </p>
                 </li>
-                <li>
-                  <div className="flex items-center gap-1 max-w-[250px] w-full border-[1.5px] rounded border-white-default py-3 px-4">
-                    <input
-                      type="email"
-                      name="email-footer"
-                      placeholder="Seu e-mail"
-                      className="bg-transparent w-[196px] text-white-primary placeholder:text-white-primary"
-                    />
-                    <button className="text-white-default">
-                      <PaperPlaneRight size={25} />
-                    </button>
-                  </div>
+                <li className="flex items-center gap-1 max-w-[250px] w-full border-[1.5px] rounded border-white-default py-3 px-4">
+                  <SendEmail />
                 </li>
               </ul>
             </nav>
@@ -172,10 +161,7 @@ export function Footer() {
             </nav>
           </div>
         </div>
-        <div className="border-t border-white-default opacity-40 pt-4 flex justify-center gap-2 w-full mt-[60px]">
-          <Copyright size={25} />
-          <p>Copyright Rimel 2022. All right reserved</p>
-        </div>
+        <CopyRight />
       </div>
     </footer>
   );
