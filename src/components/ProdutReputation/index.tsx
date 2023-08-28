@@ -1,7 +1,8 @@
+import Image from 'next/image';
+
 import EmptyStar from '../../assets/emptyStar.svg';
 import PartStar from '../../assets/PartStar.svg';
 import CompletStar from '../../assets/CompletStar.svg';
-import Image from 'next/image';
 
 interface ReputationProps {
   reputation: number;

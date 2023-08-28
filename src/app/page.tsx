@@ -14,21 +14,27 @@ export default function Home() {
         title="Smartfones e acessórios"
         subtitle="Hoje"
       />
-      <CategoryShelf />\
+
+      <CategoryShelf />
+
       <Shelf
         search="MLB1246"
         line="category"
         title="Belaza"
         subtitle="Cuidado Pessoal"
       />
+
       <BannerAndMosaico type="banner" />
+
       <Shelf
         search="MLB1648"
         line="category"
         title="Tecnologia"
         subtitle="Informática"
       />
+
       <BannerAndMosaico type="mosaico" />
+
       <InfosShop />
     </>
   );

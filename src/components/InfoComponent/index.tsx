@@ -1,16 +1,15 @@
-'use client';
-import { Truck, Headset, ShieldCheck } from '@phosphor-icons/react';
+import { ContainerHeadset } from './Icons/Headset';
+import { ContianerShieldCheck } from './Icons/ShieldCheck';
+import { ContainerTruck } from './Icons/Truck';
 
 export function InfosShop() {
   return (
-    <div className="max-w-container m-auto my-20">
+    <div className="max-w-container m-auto mt-20">
       <div className="flex justify-center items-center gap-y-4 flex-wrap md:justify-between md:gap-y-0 max-w-[944px] w-full m-auto">
         <div className="max-w-[256px] w-full">
           <div className="bg-white-primary w-16 h-16 rounded-full flex justify-center items-center m-auto">
             <div className="bg-black rounded-full w-10 h-10 flex justify-center items-center">
-              <div className=" text-white-default">
-                <Truck size={25} />
-              </div>
+              <ContainerTruck />
             </div>
           </div>
           <div>
@@ -26,9 +25,7 @@ export function InfosShop() {
         <div className="max-w-[256px] w-full">
           <div className="bg-white-primary w-16 h-16 rounded-full flex justify-center items-center m-auto">
             <div className="bg-black rounded-full w-10 h-10 flex justify-center items-center">
-              <div className=" text-white-default">
-                <Headset size={25} />
-              </div>
+              <ContainerHeadset />
             </div>
           </div>
           <div>
@@ -44,9 +41,7 @@ export function InfosShop() {
         <div className="max-w-[256px] w-full">
           <div className="bg-white-primary w-16 h-16 rounded-full flex justify-center items-center m-auto">
             <div className="bg-black rounded-full w-10 h-10 flex justify-center items-center">
-              <div className=" text-white-default">
-                <ShieldCheck size={25} />
-              </div>
+              <ContianerShieldCheck />
             </div>
           </div>
           <div>

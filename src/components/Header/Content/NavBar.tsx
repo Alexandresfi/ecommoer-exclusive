@@ -4,11 +4,13 @@ import Link from 'next/link';
 
 export function NaveBar() {
   const pathname = usePathname();
+
   const activeClassName = (valor: string) => {
     if (pathname === valor) {
       return 'border-b border-black pt-px';
     }
   };
+
   return (
     <nav className="max-w-[30%] w-full">
       <ul className="text-base text-black flex items-center justify-between">

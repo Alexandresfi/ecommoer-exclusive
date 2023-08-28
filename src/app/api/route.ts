@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       response
     });
   } catch (error) {
-    console.error('erro back-end');
+    console.error(error);
     return NextResponse.json({ message: 'Informe o CEP' });
   }
 }

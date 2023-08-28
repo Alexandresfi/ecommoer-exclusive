@@ -1,7 +1,7 @@
 'use client';
 import { getCodeName } from '@/utils/codeName';
 import { Truck } from '@phosphor-icons/react';
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 
 interface ResponseDelivery {
   Codigo: string;
@@ -41,11 +41,10 @@ export function CalcDelivery() {
       });
 
       const deliveryArray = await responseDelivery.json();
-      const deliveryData: ResponseDelivery[] = deliveryArray.response;
+      const deliveryData: ResponseDelivery[] = await deliveryArray.response;
 
       setLoading(false);
       setDeliveryValues(deliveryData);
-      console.log(deliveryData);
     } catch (error) {
       console.log('error:', error);
     }
