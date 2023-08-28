@@ -4,7 +4,7 @@ import { ContainerTruck } from './Icons/Truck';
 
 export function InfosShop() {
   return (
-    <div className="max-w-container m-auto my-20">
+    <div className="max-w-container m-auto mt-20">
       <div className="flex justify-center items-center gap-y-4 flex-wrap md:justify-between md:gap-y-0 max-w-[944px] w-full m-auto">
         <div className="max-w-[256px] w-full">
           <div className="bg-white-primary w-16 h-16 rounded-full flex justify-center items-center m-auto">

@@ -6,7 +6,7 @@ import { SendEmail } from './Email';
 
 export function Footer() {
   return (
-    <footer className="pt-20 pb-6 text-white-primary bg-black">
+    <footer className="mt-20 pt-20 pb-6 text-white-primary bg-black">
       <div>
         <div className="flex justify-center items-baseline gap-10 flex-wrap px-5 md:justify-start lg:px-0 max-w-container lg:gap-0 lg:justify-between m-auto">
           <div>

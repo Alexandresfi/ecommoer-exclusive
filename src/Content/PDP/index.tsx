@@ -6,13 +6,13 @@ import { ContainerCarousel } from './Components/Carousel';
 import { Quantity } from './Components/Quantity';
 import { BuyButtonPDP } from './Components/BuyButton';
 import { WhishListPDP } from './Components/WishList';
-import { Delivery } from './Components/CEP';
+import { Delivery } from './Components/Delivery';
 import { DataSheet } from './Components/Datrasheet';
+import { BreadBrumb } from '@/components/BreadCrumb';
 
 import { formatPrices } from '@/utils/formatPrice';
 
 import './styles.css';
-import { BreadBrumb } from '@/components/BreadCrumb';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -67,7 +67,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
 
   return (
     <div className="max-w-container m-auto text-black">
-      <BreadBrumb category={product.category_id} production={product.title} />
+      <BreadBrumb production={product.title} />
 
       <div className=" flex flex-col px-5 lg:px-0 md:flex-row">
         <ContainerCarousel pictures={product.pictures} />

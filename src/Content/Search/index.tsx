@@ -1,12 +1,14 @@
+import { BreadBrumb } from '@/components/BreadCrumb';
 import { ProductItem } from '@/components/CardProduct';
 import { ProductDataProps } from '@/components/Shelfies';
+import { formatProductName } from '@/utils/formatProductName';
 
 interface ResultProps {
   productName: string;
 }
 export async function ContainerResultSearch({ productName }: ResultProps) {
   const resultSearchProducts = await fetch(
-    `https://api.mercadolibre.com/sites/MLB/search?q=${productName}&limit=30`,
+    `https://api.mercadolibre.com/sites/MLB/search?q=${productName}&limit=50`,
     {
       cache: 'no-store'
     }
@@ -17,8 +19,10 @@ export async function ContainerResultSearch({ productName }: ResultProps) {
 
   return (
     <div>
-      <h1 className="text-black my-10 text-center text-xl">
-        Resultado de busca para: <strong>{productName}</strong>
+      <BreadBrumb production={formatProductName(productName)} />
+      <h1 className="text-black mb-10 text-center text-xl">
+        Resultado de busca para:{' '}
+        <strong>{`"${formatProductName(productName)}"`}</strong>
       </h1>
       <ul className="flex flex-wrap items-center gap-3 md:gap-4">
         {productData?.map((product) => {

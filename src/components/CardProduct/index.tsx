@@ -22,7 +22,7 @@ interface ProducProps {
 
 export function ProductItem({
   productData: { id, thumbnail, title, price, originalPrice, reputation },
-  slider
+  slider = ''
 }: ProducProps) {
   function calcDiscount() {
     if (originalPrice === null) {
@@ -38,7 +38,7 @@ export function ProductItem({
 
   return (
     <article>
-      <div className={`${slider}`}>
+      <div className={`${slider} relative`}>
         <div className="absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3 max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full">
           {price === originalPrice || originalPrice === null ? (
             <div />
@@ -61,13 +61,14 @@ export function ProductItem({
 
           <div>
             <h3 className="mb-2 limitText">{title}</h3>
+
             <span className="flex items-center gap-3">
               <span className="text-orange-secondary font-medium leading-normal">
                 {formatPrices(price)}
               </span>
-              {price === originalPrice && originalPrice !== 0 ? null : (
+              {price === originalPrice ? null : (
                 <span className="line-through text-[#7d8184eb]">
-                  {formatPrices(originalPrice)}
+                  {originalPrice !== null && formatPrices(originalPrice)}
                 </span>
               )}
             </span>

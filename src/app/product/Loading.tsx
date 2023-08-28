@@ -2,7 +2,12 @@ import ContentLoader from 'react-content-loader';
 
 export default function Loading() {
   return (
-    <ContentLoader viewBox="0 0 800 400" height={400} width={800}>
+    <ContentLoader
+      viewBox="0 0 800 400"
+      height={400}
+      width={800}
+      className="max-w-container m-auto mt-10"
+    >
       <rect x="470" y="135" rx="5" ry="5" width="70" height="10" />
       <rect x="470" y="160" rx="5" ry="5" width="70" height="10" />
       <rect x="550" y="160" rx="5" ry="5" width="70" height="10" />
