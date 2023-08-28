@@ -1,3 +1,5 @@
+import { ContainerCategory } from '@/Content/Category';
+
 interface PDPPros {
   params: {
     id: string;
@@ -5,5 +7,9 @@ interface PDPPros {
 }
 
 export default function CategoryPage({ params: { id } }: PDPPros) {
-  return <h1 className="text-black">Futura Category Page {id}</h1>;
+  return (
+    <div className="max-w-container m-auto px-5 lg:px-0">
+      <ContainerCategory productLink={id} />
+    </div>
+  );
 }

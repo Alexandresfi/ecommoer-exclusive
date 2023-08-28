@@ -5,7 +5,8 @@ const nextConfig = {
       'http2.mlstatic.com',
       'scontent.fjpa14-1.fna.fbcdn.net',
       'th.bing.com',
-      'logodownload.org'
+      'logodownload.org',
+      'media4.giphy.com'
     ]
   }
 };
