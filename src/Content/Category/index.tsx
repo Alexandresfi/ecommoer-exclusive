@@ -4,32 +4,32 @@ import { ProductItem } from '@/components/CardProduct';
 import { ProductDataProps } from '@/components/Shelfies';
 import { formatProductName } from '@/utils/formatProductName';
 
-interface ResultProps {
-  productName: string;
+interface CategoryProps {
+  productLink: string;
 }
 
-export async function ContainerResultSearch({ productName }: ResultProps) {
-  const resultSearchProducts = await fetch(
-    `https://api.mercadolibre.com/sites/MLB/search?q=${productName}&limit=50`,
+export async function ContainerCategory({ productLink }: CategoryProps) {
+  const categoryProducts = await fetch(
+    `https://api.mercadolibre.com/sites/MLB/search?${productLink.replace(
+      /%3D/gi,
+      '='
+    )}&limit=50`,
     {
       cache: 'no-store'
     }
   );
 
-  const response = await resultSearchProducts.json();
+  const response = await categoryProducts.json();
   const productData: ProductDataProps[] = response.results;
 
   if (productData.length < 1) {
-    return <NotFound productName={productName} />;
+    return <NotFound productName={productLink} />;
   }
 
   return (
     <div>
-      <BreadBrumb production={formatProductName(productName)} />
-      <h1 className="text-black mb-10 text-center text-xl">
-        Resultado de busca para:{' '}
-        <strong>{`"${formatProductName(productName)}"`}</strong>
-      </h1>
+      <BreadBrumb production="Categoria" />
+      <h1 className="text-black mb-10 text-center text-xl">Categoria</h1>
       <ul className="flex flex-wrap items-center gap-3 md:gap-4">
         {productData?.map((product) => {
           const productDataItem = {
