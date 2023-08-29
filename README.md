@@ -16,11 +16,14 @@
 - <strong> `Home com Shelfie e banners` (Finalizado) </strong>
 - <strong> `Shelf com contador de oferta` (Finalizado) </strong>
 - <strong> `Página de Produto (PDP)` (Finalizado)</strong>
-- <strong> `Minicart` (Em Aberto) </strong>
-- <strong> `Simulador de Frete` (Em Aberto) </strong>
-- <strong> `Página de Resultado de busca` (Em Andamento)</strong>
-- <strong> `Página de Resultado de categoria` (Em Aberto)</strong>
-
+- <strong> `Página de Resultado de busca` (Finalizado)</strong>
+- <strong> `Página de Resultado de categoria` (Finalizado)</strong>
+- <strong> `Simulador de Frete` (Finalizado) </strong>
+- <strong> `Minicart` (Em andamento) </strong>
+- <strong> `Página de contato` (Em Aberto) </strong>
+- <strong> `Página de About us` (Em Aberto) </strong>
+- <strong> `Página de WishList` (Em Aberto) </strong>
+- <strong> `Fluxo de Login/Cadastro` (Em Aberto) </strong>
 
 <h2> 
  💻 tecnologias / bibliotecas :
