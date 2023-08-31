@@ -3,12 +3,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { List, User } from '@phosphor-icons/react';
+import { List, ShoppingCart } from '@phosphor-icons/react';
 
 import { SearchInput } from '../Search';
 import LogoIcon from '../../../../assets/Logo.svg';
+import { Minicart } from '@/components/Minicart';
+import { useState } from 'react';
 
 export function MobileHeader() {
+  const [openMinicart, setOpenMinicart] = useState(false);
+
+  function handleOpenModal() {
+    setOpenMinicart((state) => !state);
+  }
+
   return (
     <div>
       <header className="flex justify-between items-center pt-10 pb-4 px-5 border-b border-white-primary w-full">
@@ -21,10 +29,19 @@ export function MobileHeader() {
         </Link>
 
         <button className="flex justify-center items-center w-8 h-8">
-          <User size={25} alt="sigIn" />
+          <ShoppingCart
+            size={25}
+            alt="open minicart"
+            onClick={handleOpenModal}
+          />
         </button>
       </header>
       <SearchInput />
+      <Minicart
+        open={openMinicart}
+        className="min-h-full ml-auto z-30 absolute top-0 bg-transparent w-full"
+        oncloseModal={handleOpenModal}
+      />
     </div>
   );
 }

@@ -36,6 +36,15 @@ export function ProductItem({
     return Math.trunc(percentual);
   }
 
+  const productBuyButton = {
+    id,
+    thumbnail,
+    title,
+    price,
+    originalPrice,
+    quantity: 0
+  };
+
   return (
     <article>
       <div className={`${slider} relative`}>
@@ -49,7 +58,10 @@ export function ProductItem({
           )}
           <WhishList />
         </div>
-        <BuyButton className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300" />
+        <BuyButton
+          product={productBuyButton}
+          className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300"
+        />
         <Link
           href={`/product/${id}-${reputation}`}
           className="max-w-[177px] md:max-w-[200px] lg:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4"
