@@ -2,17 +2,18 @@ import { Inter } from 'next/font/google';
 
 import { Reputation } from '@/components/ProdutReputation';
 import { Shelf } from '@/components/Shelfies';
+import { formatPrices } from '@/utils/formatPrice';
+import { BreadBrumb } from '@/components/BreadCrumb';
+
 import { ContainerCarousel } from './Components/Carousel';
 import { Quantity } from './Components/Quantity';
 import { BuyButtonPDP } from './Components/BuyButton';
 import { WhishListPDP } from './Components/WishList';
 import { Delivery } from './Components/Delivery';
 import { DataSheet } from './Components/Datrasheet';
-import { BreadBrumb } from '@/components/BreadCrumb';
-
-import { formatPrices } from '@/utils/formatPrice';
 
 import './styles.css';
+import { ActionsButton } from './Components/ActionsButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ interface Props {
 
 interface ProductData {
   body: {
+    id: string;
     title: string;
     price: number;
     original_price: number;
@@ -64,6 +66,15 @@ export async function ContainerPDP({ id, reputation }: Props) {
 
   const { plain_text: description }: DescriptionProps =
     await responseDescription.json();
+
+  const productProps = {
+    id: product.id,
+    thumbnail: product.pictures[0].url,
+    title: product.title,
+    price: product.price,
+    originalPrice: product.original_price,
+    quantity: 0
+  };
 
   return (
     <div className="max-w-container m-auto text-black">
@@ -108,11 +119,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
             )}
           </p>
 
-          <div className="flex items-center justify-between">
-            <Quantity />
-            <BuyButtonPDP />
-            <WhishListPDP />
-          </div>
+          <ActionsButton productData={productProps} />
           <Delivery />
         </div>
       </div>

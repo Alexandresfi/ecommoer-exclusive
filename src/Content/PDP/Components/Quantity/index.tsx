@@ -1,16 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+interface QuantityProps {
+  quantity: number;
+  setQuantity: (item: number) => void;
+}
 
-export function Quantity() {
-  const [quantity, setQuantity] = useState<number>(1);
-
+export function Quantity({ quantity, setQuantity }: QuantityProps) {
   function handleIncrement() {
-    setQuantity((state) => state + 1);
+    setQuantity(quantity + 1);
   }
 
   function handleDecrement() {
-    setQuantity((state) => (state - 1 < 1 ? 1 : state - 1));
+    setQuantity(quantity - 1 < 1 ? 1 : quantity - 1);
   }
 
   const numericRegex = /^[0-9]*$/;
@@ -31,11 +32,10 @@ export function Quantity() {
         minLength={1}
         value={quantity}
         onChange={(e) =>
-          setQuantity(() =>
+          setQuantity(
             numericRegex.test(e.target.value) ? Number(e.target.value) : 1
           )
         }
-        id=""
       />
       <button
         className="w-10 h-[44px] text-center text-xl font-medium hover:bg-orange-secondary transition-all hover:text-white-default hover:rounded"

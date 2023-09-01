@@ -7,9 +7,9 @@ import { UseMinicart } from '@/hooks/MinicartContext';
 import { ShoppingCart } from '@phosphor-icons/react';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  product: ProductData;
+  product: ProductDataBuyButton;
 }
-interface ProductData {
+export interface ProductDataBuyButton {
   id: string;
   thumbnail: string;
   title: string;
@@ -21,7 +21,7 @@ interface ProductData {
 export function BuyButton({ product, ...res }: Props) {
   const { addProduct, updateQuantity, products } = UseMinicart();
 
-  function addProductMinicart(product: ProductData) {
+  function addProductMinicart(product: ProductDataBuyButton) {
     const index = products?.findIndex((item) => item.id === product.id);
 
     if (index >= 0) {

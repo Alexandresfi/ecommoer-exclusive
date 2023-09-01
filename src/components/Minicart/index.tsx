@@ -1,17 +1,20 @@
 'use client';
 
-import { UseMinicart } from '@/hooks/MinicartContext';
 import Image from 'next/image';
 import { DialogHTMLAttributes } from 'react';
 
+import { UseMinicart } from '@/hooks/MinicartContext';
+import { formatPrices } from '@/utils/formatPrice';
+
+import { Footer } from './Components/Footer';
+import { Header } from './Components/Header';
+import './styles.css';
 interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
   oncloseModal: () => void;
 }
 
-export function Minicart(props: DialogProps) {
-  const { ...otherProps } = props;
-
-  const { products } = UseMinicart();
+export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
+  const { products, deleteProduct } = UseMinicart();
 
   const minicartEmpaty = products.length < 1;
 
@@ -20,13 +23,10 @@ export function Minicart(props: DialogProps) {
       <div className="min-h-screen rounded ml-auto flex justify-end w-full">
         <div
           className="min-h-screen basis-1/5 bg-[#08080833]"
-          onClick={props.oncloseModal}
+          onClick={oncloseModal}
         />
         <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5">
-          <header className="flex justify-between items-center py-4">
-            <p>Minha sacola de compras</p>
-            <span onClick={props.oncloseModal}>X</span>
-          </header>
+          <Header oncloseModal={oncloseModal} />
 
           {minicartEmpaty && (
             <h2 className="text-lg font-semibold text-center">
@@ -35,12 +35,9 @@ export function Minicart(props: DialogProps) {
           )}
 
           {!minicartEmpaty && (
-            <article>
+            <article className="bg-blue-400 h-full space-y-4">
               {products?.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex justify-between items-center"
-                >
+                <div key={product.id} className="flex justify-between">
                   <div className="w-[135px] h-[92px]">
                     <Image
                       src={product.thumbnail}
@@ -50,21 +47,38 @@ export function Minicart(props: DialogProps) {
                     />
                   </div>
                   <div>
-                    <p className="max-w-[300px] text-sm font-semibold">
+                    <p className="text-sm font-semibold TextLimit">
                       {product.title}
                     </p>
-                    <p>{product.price}</p>
+
+                    <div className="space-x-4 my-2">
+                      <span> {formatPrices(product.price)} </span>
+                      {product.originalPrice === product.price ? null : (
+                        <span className="line-through text-[#7d8184eb]">
+                          {product.originalPrice !== null &&
+                            formatPrices(product.originalPrice)}
+                        </span>
+                      )}
+                    </div>
+
+                    <p>Quantity</p>
                   </div>
-                  <div></div>
+                  <button
+                    className="font-sembold h-5"
+                    onClick={() => deleteProduct(product.id)}
+                  >
+                    X
+                  </button>
                 </div>
               ))}
             </article>
           )}
 
-          <footer>
-            <button>Finalizar Compra</button>
-            <button>Continuar comprando</button>
-          </footer>
+          <Footer
+            minicartEmpaty={minicartEmpaty}
+            totalPrice={100}
+            oncloseModal={oncloseModal}
+          />
         </div>
       </div>
     </dialog>
