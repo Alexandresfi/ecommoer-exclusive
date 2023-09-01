@@ -70,7 +70,8 @@ export async function ContainerPDP({ id, reputation }: Props) {
     title: product.title,
     price: product.price,
     originalPrice: product.original_price,
-    quantity: 0
+    quantity: 0,
+    reputation
   };
 
   return (

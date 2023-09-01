@@ -11,6 +11,7 @@ interface ProductDataBuyButton {
   price: number;
   originalPrice: number;
   quantity: number;
+  reputation: number;
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

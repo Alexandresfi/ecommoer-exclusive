@@ -42,7 +42,8 @@ export function ProductItem({
     title,
     price,
     originalPrice,
-    quantity: 0
+    quantity: 0,
+    reputation
   };
 
   return (

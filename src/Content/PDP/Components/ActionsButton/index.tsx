@@ -14,6 +14,7 @@ export interface ProductProps {
     price: number;
     originalPrice: number;
     quantity: number;
+    reputation: number;
   };
 }
 

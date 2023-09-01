@@ -20,6 +20,7 @@ interface ProductData {
   price: number;
   originalPrice: number;
   quantity?: number;
+  reputation: number;
 }
 
 interface MinicartData {
