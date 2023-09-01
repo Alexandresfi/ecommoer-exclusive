@@ -2,8 +2,9 @@
 import { useState } from 'react';
 
 import { Quantity } from '../Quantity';
-import { BuyButtonPDP } from '../BuyButton';
+
 import { WhishListPDP } from '../WishList';
+import { BuyButton } from '@/components/BuyButton';
 
 export interface ProductProps {
   productData: {
@@ -21,7 +22,13 @@ export function ActionsButton({ productData }: ProductProps) {
   return (
     <div className="flex items-center justify-between flex-wrap">
       <Quantity quantity={quantity} setQuantity={setQuantity} />
-      <BuyButtonPDP productData={productData} quantity={quantity} />
+      <BuyButton
+        productData={productData}
+        isPDP
+        quantity={quantity}
+        className="w-[165px] h-[44px] bg-orange-secondary text-white-default text-center font-medium text-base hover:bg-orange-secondary-hover rounded"
+        text="Compre Agora"
+      />
       <WhishListPDP />
     </div>
   );

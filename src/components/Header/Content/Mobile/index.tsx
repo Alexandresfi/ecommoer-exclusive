@@ -3,24 +3,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { List, ShoppingCart } from '@phosphor-icons/react';
-
-import { SearchInput } from '../Search';
-import LogoIcon from '../../../../assets/Logo.svg';
-import { Minicart } from '@/components/Minicart';
 import { useState } from 'react';
-import { UseMinicart } from '@/hooks/MinicartContext';
+
+import { List } from '@phosphor-icons/react';
+
+import { Minicart } from '@/components/Minicart';
+import { SearchInput } from '../Search';
+import { IconMinicart } from '../../IconMinicart';
+import LogoIcon from '../../../../assets/Logo.svg';
 
 export function MobileHeader() {
   const [openMinicart, setOpenMinicart] = useState(false);
-  const { products } = UseMinicart();
 
   function handleOpenModal() {
     setOpenMinicart((state) => !state);
   }
 
   return (
-    <div>
+    <div className=" bg-white-default">
       <header className="flex justify-between items-center pt-10 pb-4 px-5 border-b border-white-primary w-full">
         <button className="flex justify-center items-center w-8 h-8">
           <List size={25} />
@@ -30,24 +30,7 @@ export function MobileHeader() {
           <Image src={LogoIcon} width={118} height={24} alt="logo Exclusive" />
         </Link>
 
-        <button
-          className="flex justify-center relative items-center w-8 h-8"
-          onClick={handleOpenModal}
-        >
-          <ShoppingCart size={25} alt="open minicart" />
-
-          {products.length > 0 && (
-            <span className="w-5 h-5 rounded-full text-white-default bg-orange-secondary absolute top-[-8px] right-[-2px] text-sm font-semibold text-center">
-              {products.reduce((accumulator, currentValue) => {
-                const quantity =
-                  currentValue.quantity !== undefined
-                    ? currentValue.quantity
-                    : 0;
-                return accumulator + quantity;
-              }, 0)}
-            </span>
-          )}
-        </button>
+        <IconMinicart handleOpenModal={handleOpenModal} />
       </header>
 
       <SearchInput />

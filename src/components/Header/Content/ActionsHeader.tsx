@@ -1,11 +1,20 @@
 'use client';
-import { usePathname } from 'next/navigation';
-import { Heart, ShoppingCart, User } from '@phosphor-icons/react';
-import Link from 'next/link';
-import { SearchInput } from './Search';
 
-export function HeaderActions() {
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { Heart, ShoppingCart, User } from '@phosphor-icons/react';
+
+import { SearchInput } from './Search';
+import { IconMinicart } from '../IconMinicart';
+
+interface IconProps {
+  handleOpenModal: () => void;
+}
+
+export function HeaderActions({ handleOpenModal }: IconProps) {
   const pathname = usePathname();
+
   return (
     <div className="flex items-center gap-6">
       <SearchInput />
@@ -22,9 +31,7 @@ export function HeaderActions() {
           )}
         </Link>
 
-        <button className="flex justify-center items-center w-8 h-8">
-          <ShoppingCart size={25} alt="open minicart" />
-        </button>
+        <IconMinicart handleOpenModal={handleOpenModal} />
 
         <button className="flex justify-center items-center w-8 h-8">
           <User size={25} alt="sigIn" />

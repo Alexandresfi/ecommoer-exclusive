@@ -1,14 +1,11 @@
 import { Inter } from 'next/font/google';
 
-import { Reputation } from '@/components/ProdutReputation';
+import { Rating } from '@/components/Rating';
 import { Shelf } from '@/components/Shelfies';
 import { formatPrices } from '@/utils/formatPrice';
 import { BreadBrumb } from '@/components/BreadCrumb';
 
 import { ContainerCarousel } from './Components/Carousel';
-import { Quantity } from './Components/Quantity';
-import { BuyButtonPDP } from './Components/BuyButton';
-import { WhishListPDP } from './Components/WishList';
 import { Delivery } from './Components/Delivery';
 import { DataSheet } from './Components/Datrasheet';
 
@@ -92,7 +89,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
           </h1>
 
           <div className="flex items-center gap-4">
-            <Reputation reputation={reputation} />
+            <Rating rating={reputation} />
 
             <span className=" text-green-500 text-sm opacity-60 before:content-['|'] before:mr-4 before:text-white-secondary before:opacity-100 before:font-bold">
               {product.status === 'active' || product.status === 'paused'

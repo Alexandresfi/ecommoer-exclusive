@@ -22,10 +22,10 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
     <dialog {...otherProps}>
       <div className="min-h-screen rounded ml-auto flex justify-end w-full">
         <div
-          className="min-h-screen basis-1/5 bg-[#08080833]"
+          className="min-h-screen basis-1/5 lg:basis-4/5 bg-[#08080833]"
           onClick={oncloseModal}
         />
-        <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5">
+        <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5 lg:basis-1/5">
           <Header oncloseModal={oncloseModal} />
 
           {minicartEmpaty && (
