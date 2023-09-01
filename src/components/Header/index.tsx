@@ -3,9 +3,9 @@ import { HandleHeader } from './Content/HandleHeader';
 
 export function Header() {
   return (
-    <div>
+    <header className="z-40 sticky top-0">
       <TopBar />
       <HandleHeader />
-    </div>
+    </header>
   );
 }

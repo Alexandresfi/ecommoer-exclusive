@@ -4,18 +4,18 @@ import EmptyStar from '../../assets/emptyStar.svg';
 import PartStar from '../../assets/PartStar.svg';
 import CompletStar from '../../assets/CompletStar.svg';
 
-interface ReputationProps {
-  reputation: number;
+interface RatingProps {
+  rating: number;
 }
 
-export function Reputation({ reputation }: ReputationProps) {
+export function Rating({ rating }: RatingProps) {
   const numberStar = 20;
 
-  function calcReputation(reputation: number) {
-    const divisionResult = reputation / numberStar;
+  function calcRating(rating: number) {
+    const divisionResult = rating / numberStar;
 
     const getIntPart = Math.trunc(divisionResult);
-    const getDecimalPart = reputation - getIntPart;
+    const getDecimalPart = rating - getIntPart;
 
     return {
       intPart: getIntPart,
@@ -24,7 +24,7 @@ export function Reputation({ reputation }: ReputationProps) {
   }
 
   function createStartArray() {
-    const { intPart, decimalPart } = calcReputation(reputation);
+    const { intPart, decimalPart } = calcRating(rating);
 
     const starArray = [
       ...Array(intPart).fill(CompletStar),
@@ -44,6 +44,7 @@ export function Reputation({ reputation }: ReputationProps) {
           <Image src={item} width={15} height={15} alt="avaliacoes" />
         </span>
       ))}
+      <span className="text-[#7d8184eb] text-xs">({rating})</span>
     </div>
   );
 }

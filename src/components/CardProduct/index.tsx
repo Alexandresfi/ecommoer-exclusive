@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { WhishList } from './Components/WishList/wishList';
-import { BuyButton } from './Components/BuyButton';
 
 import { formatPrices } from '@/utils/formatPrice';
-import { Reputation } from '../ProdutReputation';
+import { Rating } from '../Rating';
 import './styles.css';
+import { BuyButton } from '../BuyButton';
 
 interface ProducProps {
   productData: {
@@ -36,6 +36,16 @@ export function ProductItem({
     return Math.trunc(percentual);
   }
 
+  const productBuyButton = {
+    id,
+    thumbnail,
+    title,
+    price,
+    originalPrice,
+    quantity: 0,
+    reputation
+  };
+
   return (
     <article>
       <div className={`${slider} relative`}>
@@ -49,7 +59,12 @@ export function ProductItem({
           )}
           <WhishList />
         </div>
-        <BuyButton className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300" />
+        <BuyButton
+          text="Add ao Carrinho"
+          isPDP={false}
+          productData={productBuyButton}
+          className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300"
+        />
         <Link
           href={`/product/${id}-${reputation}`}
           className="max-w-[177px] md:max-w-[200px] lg:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4"
@@ -74,7 +89,7 @@ export function ProductItem({
             </span>
           </div>
           <div>
-            <Reputation reputation={reputation * 100} />
+            <Rating rating={reputation * 100} />
           </div>
         </Link>
       </div>

@@ -1,0 +1,9 @@
+.TextLimitMinicart {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /* Número de linhas desejado */
+  max-height: 35px; /* Altura equivalente a três linhas de texto */
+  max-width: 300px;
+}

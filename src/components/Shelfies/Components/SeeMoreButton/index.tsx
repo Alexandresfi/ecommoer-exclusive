@@ -10,7 +10,7 @@ export function SeeMoreButton({ children, category, ...res }: ButtonProps) {
   const router = useRouter();
 
   const handleClickLink = async () => {
-    await router.push(`/${category}`);
+    await router.push(`/category/category=${category}`);
   };
 
   return (
