@@ -56,7 +56,7 @@ export function Carousel({ productData, offer }: ProductDataItemProps) {
     }
   }
   return (
-    <div className={`${!offer ? 'max-w-container m-auto' : ''} pl-5 lg:pl-0`}>
+    <div className={`${!offer ? 'max-w-container m-auto' : ''} pl-5 xl:pl-0`}>
       <div className="max-w-container m-auto hidden lg:flex lg:items-center lg:justify-end lg:gap-1 lg:translate-y-[-61px]">
         <button
           onClick={() => instanceRef.current?.prev()}

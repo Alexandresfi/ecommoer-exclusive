@@ -7,7 +7,7 @@ interface TitleProps {
 }
 export function Header({ title, subTitle, counter = false }: TitleProps) {
   return (
-    <div className="mb-6 max-w-container m-auto px-5 lg:px-0">
+    <div className="mb-6 max-w-container m-auto px-5 xl:px-0">
       <div className="flex items-center flex-wrap gap-x-20 gap-y-3 md:items-end lg:items-center">
         <div className="flex flex-col gap-y-1">
           <div className="flex items-center gap-4">

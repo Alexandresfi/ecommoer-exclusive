@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="mt-20 pt-20 pb-6 text-white-primary bg-black">
       <div>
-        <div className="flex justify-center items-baseline gap-10 flex-wrap px-5 md:justify-start lg:px-0 max-w-container lg:gap-0 lg:justify-between m-auto">
+        <div className="flex justify-center items-baseline gap-10 flex-wrap px-5 md:justify-start xl:px-0 max-w-container lg:gap-0 lg:justify-between m-auto">
           <div>
             <Link href="/" prefetch={false} className="text-2xl font-bold mb-3">
               Exlusive

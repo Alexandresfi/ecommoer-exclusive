@@ -6,7 +6,7 @@ export function CategoryShelf() {
     <div className="mt-[35px]">
       <Header title="Navegue pelas Categorias" subTitle="Categorias" />
       <CategoryCarousel />
-      <span className="border-b-[1px] mt-[35px] h-px block max-w-container m-auto" />
+      <span className="border-b-[1px] my-[35px] h-px block max-w-container m-auto" />
     </div>
   );
 }
