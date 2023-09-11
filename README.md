@@ -20,8 +20,8 @@
 - <strong> `Página de Resultado de categoria` (Finalizado)</strong>
 - <strong> `Simulador de Frete` (Finalizado) </strong>
 - <strong> `Minicart` (Finalizado) </strong>
-- <strong> `Página de contato` (Em Andamento) </strong>
-- <strong> `Página de About us` (Em Aberto) </strong>
+- <strong> `Página de contato` (Finalizado) </strong>
+- <strong> `Página de About us` (Em andamento) </strong>
 - <strong> `Página de WishList` (Em Aberto) </strong>
 - <strong> `Fluxo de Login/Cadastro` (Em Aberto) </strong>
 
