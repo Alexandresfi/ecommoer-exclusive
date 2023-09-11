@@ -3,7 +3,7 @@ import { Envelope, Phone } from '@phosphor-icons/react';
 
 export function InfoCard() {
   return (
-    <div className="flex flex-col py-10 px-2 gap-8 shadow-md rounded xl:px-5">
+    <div className="flex flex-col py-10 px-2 gap-8 shadow-md rounded w-full lg:w-auto xl:px-5">
       <div className="border-b-2 pb-8 flex flex-col gap-4 text-sm">
         <p className="flex gap-4 items-center">
           <span className="w-10 h-10 flex justify-center items-center rounded-full bg-orange-secondary">
@@ -25,7 +25,7 @@ export function InfoCard() {
             <Envelope size={24} color="#fff" />
           </span>
 
-          <p>Ecreva para nós</p>
+          <p>Escreva para nós</p>
         </p>
 
         <p className="max-w-[260px]">
