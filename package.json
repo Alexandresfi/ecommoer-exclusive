@@ -20,6 +20,7 @@
     "eslint-config-next": "13.4.13",
     "keen-slider": "^6.8.6",
     "next": "13.4.13",
+    "nodemailer": "^6.9.5",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-content-loader": "^6.2.1",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
+    "@types/nodemailer": "^6.4.9",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.0.0",
