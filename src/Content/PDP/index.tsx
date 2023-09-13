@@ -76,7 +76,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
 
   return (
     <div className="max-w-container m-auto text-black">
-      <BreadBrumb production={product.title} />
+      <BreadBrumb isBack name={product.title} />
 
       <div className=" flex flex-col px-5 lg:px-0 md:flex-row">
         <ContainerCarousel pictures={product.pictures} />

@@ -28,7 +28,7 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
 
   return (
     <div>
-      <BreadBrumb production="Categoria" />
+      <BreadBrumb name="Categoria" />
       <h1 className="text-black mb-10 text-center text-xl">Categoria</h1>
       <ul className="flex flex-wrap items-center gap-3 md:gap-4">
         {productData?.map((product) => {

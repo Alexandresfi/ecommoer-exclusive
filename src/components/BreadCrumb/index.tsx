@@ -3,10 +3,11 @@ import { formatProductName } from '@/utils/formatProductName';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 interface Props {
-  production: string;
+  name: string;
+  isBack?: boolean;
 }
 
-export function BreadBrumb({ production }: Props) {
+export function BreadBrumb({ name, isBack = false }: Props) {
   const router = useRouter();
   return (
     <nav className="my-10 px-5 lg:px-0">
@@ -14,12 +15,19 @@ export function BreadBrumb({ production }: Props) {
         <li className=" underline">
           <Link href="/">Home</Link>
         </li>
+        {isBack && (
+          <>
+            <span>/</span>
+            <li
+              className="underline cursor-pointer"
+              onClick={() => router.back()}
+            >
+              Voltar
+            </li>
+          </>
+        )}
         <span>/</span>
-        <li className="underline cursor-pointer" onClick={() => router.back()}>
-          Voltar
-        </li>
-        <span>/</span>
-        <li className="font-bold">{formatProductName(production)}</li>
+        <li className="font-bold">{formatProductName(name)}</li>
       </ul>
     </nav>
   );
