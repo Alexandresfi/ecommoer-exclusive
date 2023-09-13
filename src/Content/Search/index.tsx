@@ -25,7 +25,7 @@ export async function ContainerResultSearch({ productName }: ResultProps) {
 
   return (
     <div>
-      <BreadBrumb production={formatProductName(productName)} />
+      <BreadBrumb name={formatProductName(productName)} />
       <h1 className="text-black mb-10 text-center text-xl">
         Resultado de busca para:{' '}
         <strong>{`"${formatProductName(productName)}"`}</strong>
