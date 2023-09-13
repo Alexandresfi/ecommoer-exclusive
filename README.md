@@ -21,8 +21,8 @@
 - <strong> `Simulador de Frete` (Finalizado) </strong>
 - <strong> `Minicart` (Finalizado) </strong>
 - <strong> `Página de contato` (Finalizado) </strong>
-- <strong> `Página de About us` (Em andamento) </strong>
-- <strong> `Página de WishList` (Em Aberto) </strong>
+- <strong> `Página de About us` (Finalizado) </strong>
+- <strong> `Página de WishList` (Em Andamento) </strong>
 - <strong> `Fluxo de Login/Cadastro` (Em Aberto) </strong>
 
 <h2> 
