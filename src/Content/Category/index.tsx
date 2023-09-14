@@ -30,7 +30,7 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
     <div>
       <BreadBrumb name="Categoria" />
       <h1 className="text-black mb-10 text-center text-xl">Categoria</h1>
-      <ul className="flex flex-wrap items-center gap-3 md:gap-4">
+      <ul className="flex flex-wrap items-center gap-3 md:gap-4 px-5 xl:px-0">
         {productData?.map((product) => {
           const productDataItem = {
             id: product?.id,
@@ -43,7 +43,10 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
           };
           return (
             <li key={product.id}>
-              <ProductItem productData={productDataItem} />
+              <ProductItem
+                productData={productDataItem}
+                isContentPage="max-w-[147px]"
+              />
             </li>
           );
         })}

@@ -10,12 +10,14 @@ import { CaretDoubleLeft, CaretDoubleRight } from '@phosphor-icons/react';
 
 export function CarouselMobilePDP({ pictures }: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     }
   });
+
   return (
     <div className="relative">
       <button
@@ -51,7 +53,7 @@ export function CarouselMobilePDP({ pictures }: Props) {
               onClick={() => {
                 instanceRef.current?.moveToIdx(idx);
               }}
-              className={`border border-gray-400 rounded-full w-4 h-4 ${
+              className={`border border-gray-400 rounded-full w-2.5 h-2.5 lg:w-4 lg:h-4 ${
                 currentSlide === idx ? 'bg-black' : 'bg-gray-400'
               }`}
             />

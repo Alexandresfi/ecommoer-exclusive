@@ -17,8 +17,8 @@ export function Carousel({ productData, offer }: ProductDataItemProps) {
     loop: true,
     rubberband: false,
     slides: {
-      perView: 2.2,
-      spacing: 5
+      perView: 1.7,
+      spacing: 0
     },
     breakpoints: {
       '(min-width: 714px)': {
@@ -55,6 +55,7 @@ export function Carousel({ productData, offer }: ProductDataItemProps) {
       return 'max-w-container m-auto';
     }
   }
+
   return (
     <div className={`${!offer ? 'max-w-container m-auto' : ''} pl-5 xl:pl-0`}>
       <div className="max-w-container m-auto hidden lg:flex lg:items-center lg:justify-end lg:gap-1 lg:translate-y-[-61px]">

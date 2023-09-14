@@ -40,7 +40,7 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
 
           {minicartEmpaty && (
             <h2 className="text-lg font-semibold text-center">
-              Sua Sacola de compras está vázia!
+              Seu carrinho de compras está vázio!
             </h2>
           )}
 
