@@ -18,11 +18,13 @@ interface ProducProps {
     reputation: number;
   };
   slider?: string;
+  isContentPage?: string;
 }
 
 export function ProductItem({
   productData: { id, thumbnail, title, price, originalPrice, reputation },
-  slider = ''
+  slider = '',
+  isContentPage = ''
 }: ProducProps) {
   function calcDiscount() {
     if (originalPrice === null) {
@@ -49,7 +51,9 @@ export function ProductItem({
   return (
     <article>
       <div className={`${slider} relative`}>
-        <div className="absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3 max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full">
+        <div
+          className={`absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3 max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full ${isContentPage}`}
+        >
           {price === originalPrice || originalPrice === null ? (
             <div />
           ) : (
@@ -57,17 +61,17 @@ export function ProductItem({
               -{calcDiscount()}%
             </span>
           )}
-          <WhishList />
+          <WhishList product={productBuyButton} />
         </div>
         <BuyButton
           text="Add ao Carrinho"
           isPDP={false}
           productData={productBuyButton}
-          className="text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300"
+          className={`text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300 ${isContentPage}`}
         />
         <Link
           href={`/product/${id}-${reputation}`}
-          className="max-w-[177px] md:max-w-[200px] lg:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4"
+          className={`max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4 ${isContentPage}`}
           prefetch={false}
         >
           <div className="h-64 lg:h-[278px] bg-white-primary m-auto flex items-center justify-center  w-full">
@@ -77,7 +81,7 @@ export function ProductItem({
           <div>
             <h3 className="mb-2 limitText">{title}</h3>
 
-            <span className="flex items-center gap-3">
+            <span className="flex items-center  gap-2 sm:gap-3">
               <span className="text-orange-secondary font-medium leading-normal">
                 {formatPrices(price)}
               </span>

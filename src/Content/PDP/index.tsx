@@ -7,7 +7,7 @@ import { BreadBrumb } from '@/components/BreadCrumb';
 
 import { ContainerCarousel } from './Components/Carousel';
 import { Delivery } from './Components/Delivery';
-import { DataSheet } from './Components/Datrasheet';
+import { DataSheet } from './Components/Datarasheet';
 
 import './styles.css';
 import { ActionsButton } from './Components/ActionsButton';

@@ -6,10 +6,10 @@ import { InfosShop } from '@/components/InfoComponent';
 export function ContainerAbout() {
   return (
     <main>
-      <div className="max-w-container m-auto">
+      <div className="max-w-container m-auto px-5 xl:px-2">
         <BreadBrumb name="Sobre" />
       </div>
-      <div className="flex justify-between items-center flex-wrap gap-y-10 max-w-offer ml-auto px-5 lg:px-2">
+      <div className="flex justify-between items-center flex-wrap gap-y-10 max-w-offer ml-auto px-5 xl:px-2">
         <div className="max-w-[525px]">
           <h1 className="mb-10 text-3xl tracking-[3.24px] text-center font-bold lg:text-start lg:text-5xl">
             Nossa História
@@ -32,10 +32,10 @@ export function ContainerAbout() {
           width={705}
           height={609}
           alt="image main about us"
-          className="max-w-[705px] w-full h-[609px] object-cover"
+          className="max-w-[520px] xl:max-w-[705px] w-full h-[609px] object-cover"
         />
       </div>
-      <div className="max-w-container mx-auto my-10">
+      <div className="max-w-container mx-auto my-10 px-5 xl:px-2">
         <InfoAbout />
         <InfosShop />
       </div>
