@@ -1,8 +1,8 @@
 'use client';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { DesktopHeader } from './Desktop';
-import { MobileHeader } from './Mobile';
+import { DesktopHeader } from '../Content/Desktop';
+import { MobileHeader } from '../Content/Mobile';
 
 export function HandleHeader() {
   const size = useMediaQuery();

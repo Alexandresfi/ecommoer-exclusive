@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { Minicart } from '@/components/Minicart';
-import { NaveBar } from '../NavBar';
-import { HeaderActions } from '../ActionsHeader';
+import { NaveBar } from '../../Components/NavBar';
+import { HeaderActions } from '../../Components/ActionsHeader';
 import LogoIcon from '../../../../assets/Logo.svg';
 
 export function DesktopHeader() {
