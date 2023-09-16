@@ -23,7 +23,7 @@
 - <strong> `Página de contato` (Finalizado) </strong>
 - <strong> `Página de About us` (Finalizado) </strong>
 - <strong> `Página de WishList` (Finalizado) </strong>
-- <strong> `Header Mobile` (Em Aberto) </strong>
+- <strong> `Header Mobile` (Finalizado) </strong>
 - <strong> `Fluxo de Login/Cadastro` (Em Aberto) </strong>
 
 <h2> 
