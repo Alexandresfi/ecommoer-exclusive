@@ -31,14 +31,17 @@ export function CalcDelivery() {
         cep
       };
 
-      const responseDelivery = await fetch('http://localhost:3000/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-        cache: 'no-store'
-      });
+      const responseDelivery = await fetch(
+        `${process.env.NEXT_PUBLIC_HOST_LOCAL}/api`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data),
+          cache: 'no-store'
+        }
+      );
 
       const deliveryArray = await responseDelivery.json();
       const deliveryData: ResponseDelivery[] = await deliveryArray.response;

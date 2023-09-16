@@ -27,19 +27,22 @@ export function Form() {
     const phone = formData.get('your-phone');
     const mensage = formData.get('your-mensage');
 
-    const sendEmail = await fetch('http://localhost:3000/api/sendEmail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        mensage
-      }),
-      cache: 'no-store'
-    });
+    const sendEmail = await fetch(
+      `${process.env.NEXT_PUBLIC_HOST_LOCAL}/api/sendEmail`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          mensage
+        }),
+        cache: 'no-store'
+      }
+    );
 
     const responseEmail: SendMailProps = await sendEmail.json();
 
