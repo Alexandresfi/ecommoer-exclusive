@@ -6,7 +6,8 @@ const nextConfig = {
       'scontent.fjpa14-1.fna.fbcdn.net',
       'th.bing.com',
       'logodownload.org',
-      'media4.giphy.com'
+      'media4.giphy.com',
+      'lh3.googleusercontent.com'
     ]
   }
 };

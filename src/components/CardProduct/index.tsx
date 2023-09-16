@@ -24,7 +24,7 @@ interface ProducProps {
 export function ProductItem({
   productData: { id, thumbnail, title, price, originalPrice, reputation },
   slider = '',
-  isContentPage = ''
+  isContentPage = 'max-w-[177px]'
 }: ProducProps) {
   function calcDiscount() {
     if (originalPrice === null) {
@@ -52,7 +52,7 @@ export function ProductItem({
     <article>
       <div className={`${slider} relative`}>
         <div
-          className={`absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3 max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full ${isContentPage}`}
+          className={`absolute top-1 lg:top-3 flex justify-between items-center px-1 lg:px-3  md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full ${isContentPage}`}
         >
           {price === originalPrice || originalPrice === null ? (
             <div />
@@ -67,11 +67,11 @@ export function ProductItem({
           text="Add ao Carrinho"
           isPDP={false}
           productData={productBuyButton}
-          className={`text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300 ${isContentPage}`}
+          className={`text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px]  md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300 ${isContentPage}`}
         />
         <Link
           href={`/product/${id}-${reputation}`}
-          className={`max-w-[177px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4 ${isContentPage}`}
+          className={`md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4 ${isContentPage}`}
           prefetch={false}
         >
           <div className="h-64 lg:h-[278px] bg-white-primary m-auto flex items-center justify-center  w-full">

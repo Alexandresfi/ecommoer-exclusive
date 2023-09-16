@@ -31,7 +31,7 @@ export function SearchInput() {
         <input
           type="text"
           name="search"
-          className="bg-white-secondary focus-within:px-1 outline-white-primary"
+          className="bg-white-secondary focus-within:px-1 outline-white-primary w-full"
           placeholder="O que você procura?"
           onChange={(e) => setName(e.target.value)}
           value={name}

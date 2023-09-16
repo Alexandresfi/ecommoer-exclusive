@@ -28,7 +28,7 @@ export function ContainerAbout() {
           </p>
         </div>
         <Image
-          src="https://scontent.fjpa14-1.fna.fbcdn.net/v/t39.30808-6/376270641_122124066704016045_228448292529258156_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=49d041&_nc_ohc=ap2ExJExhDUAX8oaxZ9&_nc_ht=scontent.fjpa14-1.fna&oh=00_AfDP6rq7hC8MfWL4UUa8ecDrQ77KYS9iPk1Ze0uc5gI42Q&oe=65049FFE"
+          src="https://lh3.googleusercontent.com/pw/AIL4fc_XOxC0D40p-kXnkPP2LePal8QN7kUOtBLQiq_b_zmHr-Fl03Ns8y5EfmZlcBdR1CUqSbN0_EMDIoBY9IqUv8GV_1-vHTxTC3hBFNOjXj8ACU83QPirO2hpSjpdQS1gJIi-48BudkMogE3PjprDFIanFmVI1UGk3vdVsWRXvirT-BndpojXQFQJ69LXmZki5PKvSTvgLl0ubIEE_oIDc9nPzVAaFt9GvcEuWsynXMMjDhGeo87CsyM_-WCVg5MLCiTfjM-Y0HnEYb-dmEFnmugqy-XsW-T9_pOtm4QpVEh7cLUxJKjxuH3Ajgg6gsDIVZwlYhrKB-7-n-yBs7vlTyZVYs2gUfuoVQFKwNIksbDs6YvBDOg99t-ryWEZX5ZlKNKBTMwDyfeVGd-8C-1ZyegI3wUc0XQkmZKbZgijbAfugAKWOXvGAV6-1Lg-G1lfdxo8AMLV7ccGHkT9YryGH8_cbPp6hCOhrW84BnOVeOG62SBv7cWd421jfPbDoCcMfLK_jFnjLu8-geNrA83jBlkkqRoTb4UHoG0Y2j5FCYDeV02SJkviP7uaNBTWmJAL6hlRacEKTUiIXhuL8aquz7TyvS8Inh0oNNcYCe6jAtkAyFYz1ZtT_EDYK-kmj4pO_iBbFKB5GlMH9oamlreb7c9B2Rr6HmKBX7MAYn9bXU8kfxST9f99TacCm5I9jmhsjHQFPoszoUzxNZ3bADAs4x73pTv78GvZkgvyu2hVAN4Yre0_HaOeNJtIxXXQCvW4Kt06LatlAkv2a07Lb-BsGu7yGry1SUl95kxAjPLmmYmMgy8xs1NYLLpOKNAhSayUvuGYW4WwRsRMlgOYSoLsRiKXFaLjRzxZxE9GzQlSzPtROjcQbuyY-Eol9riZzwqFNZvubGwenHSXdnMMiaU-VZScjWyUYQ0FEZ_98454d2ayv5PNAtKJbrv-01E=w705-h609-s-no?authuser=0"
           width={705}
           height={609}
           alt="image main about us"

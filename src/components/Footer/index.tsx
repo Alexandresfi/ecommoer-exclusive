@@ -21,7 +21,7 @@ export function Footer() {
                     Ganhe 10% de desconto no seu primeiro pedido
                   </p>
                 </li>
-                <li className="max-w-[250px] w-full h-12 border-[1.5px] rounded border-white-default px-4">
+                <li>
                   <SendEmail />
                 </li>
               </ul>
