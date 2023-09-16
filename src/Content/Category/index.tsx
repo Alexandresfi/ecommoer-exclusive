@@ -1,8 +1,7 @@
-import NotFound from '@/app/search/not-found';
 import { BreadBrumb } from '@/components/BreadCrumb';
 import { ProductItem } from '@/components/CardProduct';
+import { NotFound } from '@/components/NotFound';
 import { ProductDataProps } from '@/components/Shelfies';
-import { formatProductName } from '@/utils/formatProductName';
 
 interface CategoryProps {
   productLink: string;
