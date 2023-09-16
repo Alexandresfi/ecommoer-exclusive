@@ -1,4 +1,4 @@
-import NotFound from '@/app/search/not-found';
+import NotFound from '../../app/search/not-found';
 import { BreadBrumb } from '@/components/BreadCrumb';
 import { ProductItem } from '@/components/CardProduct';
 import { ProductDataProps } from '@/components/Shelfies';
