@@ -1,5 +1,5 @@
-import { TopBar } from './Content/Topbar';
-import { HandleHeader } from './Content/HandleHeader';
+import { TopBar } from './Components/Topbar';
+import { HandleHeader } from './Components/HandleHeader';
 
 export function Header() {
   return (

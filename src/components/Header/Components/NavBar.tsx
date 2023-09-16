@@ -13,7 +13,7 @@ export function NaveBar() {
 
   return (
     <nav className="max-w-[30%] w-full">
-      <ul className="text-base text-black flex items-center justify-between">
+      <ul className="flex items-center justify-between text-base text-black ">
         <li>
           <Link href="/" className={`${activeClassName('/')}`}>
             Home

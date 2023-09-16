@@ -10,7 +10,7 @@ interface Props {
 export function BreadBrumb({ name, isBack = false }: Props) {
   const router = useRouter();
   return (
-    <nav className="my-10 px-5 lg:px-0">
+    <nav className="my-10 px-5 xl:px-0">
       <ul className="text-black text-sm lg:text-base flex flex-wrap items-center gap-2">
         <li className=" underline">
           <Link href="/">Home</Link>

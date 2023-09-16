@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 
 import { Heart, ShoppingCart, User } from '@phosphor-icons/react';
 
-import { SearchInput } from './Search';
+import { SearchInput } from '../SearchBar';
 import { IconMinicart } from '../IconMinicart';
+import { IconWishlist } from '../IconWishlist';
 
 interface IconProps {
   handleOpenModal: () => void;
@@ -20,16 +21,7 @@ export function HeaderActions({ handleOpenModal }: IconProps) {
       <SearchInput />
 
       <div className="hidden md:flex items-center gap-1.5">
-        <Link
-          href="/wishlist"
-          className="w-8 h-8 flex justify-center items-center"
-        >
-          {pathname === '/wishlist' ? (
-            <Heart size={25} weight="fill" color="#db4444" />
-          ) : (
-            <Heart size={25} alt="link wishlist" />
-          )}
-        </Link>
+        <IconWishlist pathname={pathname} />
 
         <IconMinicart handleOpenModal={handleOpenModal} />
 

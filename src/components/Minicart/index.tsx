@@ -1,7 +1,9 @@
 'use client';
 
+import { DialogHTMLAttributes } from 'react';
+
 import Image from 'next/image';
-import { DialogHTMLAttributes, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { UseMinicart } from '@/hooks/MinicartContext';
 import { formatPrices } from '@/utils/formatPrice';
@@ -15,6 +17,7 @@ interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
 }
 
 export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
+  const router = useRouter();
   const { products, deleteProduct } = UseMinicart();
 
   const minicartEmpaty = products.length < 1;
@@ -28,14 +31,19 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
     return formatPrices(totalPriceCalc);
   }
 
+  function redirectProducty(id: string, rating: number) {
+    router.push(`/product/${id}-${rating}`);
+    oncloseModal();
+  }
+
   return (
     <dialog {...otherProps}>
       <div className="min-h-screen rounded ml-auto flex justify-end w-full">
         <div
-          className="min-h-screen basis-1/5 lg:basis-4/5 bg-[#08080833]"
+          className="min-h-screen basis-1/5 xl:basis-4/5 bg-[#08080833]"
           onClick={oncloseModal}
         />
-        <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5 lg:basis-1/5">
+        <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5 xl:basis-1/5">
           <Header oncloseModal={oncloseModal} />
 
           {minicartEmpaty && (
@@ -45,9 +53,15 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
           )}
 
           {!minicartEmpaty && (
-            <article className="h-full space-y-4">
+            <article className="h-full space-y-4 cursor-pointer">
               {products?.map((product) => (
-                <div key={product.id} className="flex gap-2">
+                <div
+                  key={product.id}
+                  className="flex gap-2"
+                  onClick={() =>
+                    redirectProducty(product.id, product.reputation)
+                  }
+                >
                   <div className="w-[135px] h-[92px]">
                     <Image
                       src={product.thumbnail}
