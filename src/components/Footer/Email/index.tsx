@@ -57,16 +57,16 @@ export function SendEmail() {
     }
   }
   return (
-    <form
-      className="flex justify-between items-center"
-      onSubmit={handleSendEmail}
-    >
+    <div>
       {sendedEmail.sended ? (
         <span className="text-green-400 text-base max-w-[196px]">
           Inscrição realizada com sucesso. Verifique seu email!
         </span>
       ) : (
-        <span className="max-w-[250px] w-full h-12 border-[1.5px] rounded border-white-default px-4">
+        <form
+          className="max-w-[250px] w-full h-12 border-[1.5px] rounded border-white-default px-4 flex justify-between items-center"
+          onSubmit={handleSendEmail}
+        >
           <input
             type="email"
             name="your-email"
@@ -76,8 +76,8 @@ export function SendEmail() {
           <button type="submit" className="text-white-default">
             <PaperPlaneRight size={25} />
           </button>
-        </span>
+        </form>
       )}
-    </form>
+    </div>
   );
 }
