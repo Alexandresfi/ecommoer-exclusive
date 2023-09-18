@@ -55,13 +55,7 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
           {!minicartEmpaty && (
             <article className="h-full space-y-4 cursor-pointer">
               {products?.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex gap-2"
-                  onClick={() =>
-                    redirectProducty(product.id, product.reputation)
-                  }
-                >
+                <div key={product.id} className="flex gap-2">
                   <div className="w-[135px] h-[92px]">
                     <Image
                       src={product.thumbnail}
@@ -69,10 +63,18 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
                       height={92}
                       alt={product.title}
                       className="w-[135px] h-[100px] object-cover"
+                      onClick={() =>
+                        redirectProducty(product.id, product.reputation)
+                      }
                     />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold TextLimitMinicart">
+                    <p
+                      className="text-sm font-semibold TextLimitMinicart"
+                      onClick={() =>
+                        redirectProducty(product.id, product.reputation)
+                      }
+                    >
                       {product.title}
                     </p>
 

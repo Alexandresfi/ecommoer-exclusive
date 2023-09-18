@@ -45,9 +45,17 @@ export function CalcDelivery() {
 
       const deliveryArray = await responseDelivery.json();
       const deliveryData: ResponseDelivery[] = await deliveryArray.response;
+      console.log(deliveryData);
 
-      setLoading(false);
-      setDeliveryValues(deliveryData);
+      if (!deliveryData) {
+        alert(
+          'A API que fornece os dados está enfrentando alguns problemas, por favor tente mais tarde!'
+        );
+        window.location.reload();
+      } else {
+        setLoading(false);
+        setDeliveryValues(deliveryData);
+      }
     } catch (error) {
       console.log('error:', error);
     }
@@ -80,7 +88,7 @@ export function CalcDelivery() {
           </label>
         </div>
       </div>
-      {deliveryValues?.length > 0 && !deliveryValues[0].MsgErro ? (
+      {deliveryValues?.length > 0 && deliveryValues[0]?.MsgErro ? (
         <ul className="text-sm font-semibold pl-[46px]">
           {deliveryValues?.map((item, index) => (
             <>
