@@ -48,6 +48,8 @@ export function ProductItem({
     reputation
   };
 
+  const isShelfs = isContentPage !== 'max-w-[177px]';
+
   return (
     <article>
       <div className={`${slider} relative`}>
@@ -71,7 +73,9 @@ export function ProductItem({
         />
         <Link
           href={`/product/${id}-${reputation}`}
-          className={`md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] h-[284px] lg:h-[350px] flex flex-col gap-4 ${isContentPage}`}
+          className={`md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] lg:h-[350px] flex flex-col gap-4 ${isContentPage} ${
+            isShelfs ? `h-[300px] sm:h-[284px]` : `h-[284px]`
+          }`}
           prefetch={false}
         >
           <div className="h-64 lg:h-[278px] bg-white-primary m-auto flex items-center justify-center  w-full">
@@ -81,7 +85,13 @@ export function ProductItem({
           <div>
             <h3 className="mb-2 limitText">{title}</h3>
 
-            <span className="flex items-center  gap-2 sm:gap-3">
+            <span
+              className={`flex  ${
+                isShelfs
+                  ? `h-12 justify-between flex-wrap items-start sm:h-auto sm:items-center sm:justify-start sm:gap-3`
+                  : `gap-2 sm:gap-3 items-center`
+              }`}
+            >
               <span className="text-orange-secondary font-medium leading-normal">
                 {formatPrices(price)}
               </span>
