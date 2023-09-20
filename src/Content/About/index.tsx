@@ -28,7 +28,7 @@ export function ContainerAbout() {
           </p>
         </div>
         <Image
-          src="https://lh3.googleusercontent.com/pw/AIL4fc_Xwrkia0ZZeqCxrNoIcChKaN4TJL9FN4SnW4Jjb4fW7nV4yYGeQNGSr1RE5YOdKYrbP1hcL2EBI4JQSmF81wcQxcpKSDL-q05V4Jz4zxyJhhPlwCpDrTKF60rr2i7wcRR-W3BvCWu33aPr9wS06DNYD1YvE2ySAQIJk1G_Ej_tKfcck4lzvu_Q_cyTcT7YjxRyT040pchYVe1Ucb6WDJrOdRQEdTXcy_-536KXrXCGet4mbagm3F-ykxcFQ-4MbCvo-7teXvSZENHCeYeyzWfbJPXfE0n_GNhxb0NE4s_WIPRM1Hr7DnTeg2MZcEXW244jQREE_GQtGeLumVHZDKedHovXpBn4Bgp5rcNHzCYlLY2Lem3QnsKwilF2TpkieYQtPZNsT6jKU6Hj3QQCgpnEZYCfnP_-7VuNVfltaZbjByZr-P_CYTa_-RAYvEddwRgQuiFmfek2KtriaOOLOUfRll7gT3YMHo1H2r0VTCIfDFnHHoxZShHbOqXDO55rLxlX1L8jzFJyt__BbS8KZOAb2uSbw8HeMu3aynt77ycbLI_A5ELXYeqaAEsk73iaIqLpm9oDpANwV__mvYwO8b3024W5EILHEFT8A3sXfJXa9dFoXPc52I8pfAy1rfNYA2sEWYLtT4HBAs8jkVTIQ7U0b4G4l7-jqSOQuQ3Gtz5b54hoqzFsj33dV9zat-pO3e9j3ZCQlZKOrFCXySM5UxhHpR7YiWV2NLNsb5_N8kGr3CWPVWEiMm7GdFlRNWBl7xtpr2VHQP0PnZ_ghL7I-7wwGFPotx4cH1ohKuP_DWSBK0AVx3w1KS7XG0DZfeY7n1Srn8ujigg-MAI1zjBHrcqpCFtG_lGahyTfC_NS6bq5PZRithqyHobVKXBn635vu_rZo-9PfrvPfOr10sdNU0oqwhOMU5W6DhktumazwjdTdhAnJuAUpgYD0SU=w705-h609-s-no?authuser=0"
+          src="https://raw.githubusercontent.com/alexandredevfront/images-ecommerce-exclusive/main/img-about-us-1.png"
           width={705}
           height={609}
           alt="image main about us"

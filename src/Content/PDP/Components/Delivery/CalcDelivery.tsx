@@ -45,13 +45,13 @@ export function CalcDelivery() {
 
       const deliveryArray = await responseDelivery.json();
       const deliveryData: ResponseDelivery[] = await deliveryArray.response;
-      console.log(deliveryData);
+      console.log(deliveryArray, data);
 
       if (!deliveryData) {
         alert(
           'A API que fornece os dados está enfrentando alguns problemas, por favor tente mais tarde!'
         );
-        window.location.reload();
+        // window.location.reload();
       } else {
         setLoading(false);
         setDeliveryValues(deliveryData);
