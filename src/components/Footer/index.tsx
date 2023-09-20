@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { CopyRight } from './CopyRight';
-import { SendEmail } from './Email';
+import { CopyRight } from './Components/CopyRight';
+import { HandleLayoutFooter } from './ToggleLayout';
+import { SendEmail } from './Components/Email';
 
 export function Footer() {
   return (
     <footer className="mt-20 pt-20 pb-6 text-white-primary bg-black">
       <div>
-        <div className="flex justify-center items-baseline gap-10 flex-wrap px-5 md:justify-start xl:px-0 max-w-container lg:gap-0 lg:justify-between m-auto">
+        <div className="flex justify-center items-baseline flex-col md:flex-row gap-10 flex-wrap max-w-[270px] md:px-5 md:justify-start xl:px-0 md:max-w-container lg:gap-0 lg:justify-between m-auto">
           <div>
             <Link href="/" prefetch={false} className="text-2xl font-bold mb-3">
               Exlusive
@@ -27,98 +28,7 @@ export function Footer() {
               </ul>
             </nav>
           </div>
-
-          <div className="w-[251px] md:w-auto">
-            <h3 className="text-xl font-bold mb-3">Suporte</h3>
-            <nav>
-              <ul className="space-y-3">
-                <li>
-                  <p className="max-w-[200px] w-full">
-                    Em todas as cidades do Brasil
-                  </p>
-                </li>
-                <li>
-                  <a
-                    href="mailto:alexandre.sfi@hotmil.com"
-                    target="_blank"
-                    className=" decoration-white-default no-underline text-base"
-                  >
-                    exclusive@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://api.whatsapp.com/send/?phone=5583999999999&app_absent=0"
-                    target="_blank"
-                    className=" decoration-white-default no-underline text-base"
-                  >
-                    +55 83 9999-9999
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="w-[251px] md:w-auto">
-            <h3 className="text-xl font-bold mb-3">Conta</h3>
-            <nav>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/account" prefetch={false}>
-                    Minha conta
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    Login / Cadrastrar-se
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    Carrinho
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    WhishList
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    Meus pedidos
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="w-[251px] md:w-auto">
-            <h3 className="text-xl font-bold mb-3">Acesso rápido</h3>
-            <nav>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/account" prefetch={false}>
-                    Política de Privacidade
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    Termo de Uso
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/login" prefetch={false}>
-                    Fale Conosco
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <HandleLayoutFooter />
 
           <div className="w-[251px] md:w-auto">
             <h3 className="text-xl font-bold mb-3">Baixe nosso APP</h3>
