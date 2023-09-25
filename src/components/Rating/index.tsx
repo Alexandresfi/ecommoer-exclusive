@@ -34,6 +34,8 @@ export function Rating({ rating }: RatingProps) {
       )
     ];
 
+    starArray.length > 5 && starArray.pop();
+
     return starArray;
   }
 

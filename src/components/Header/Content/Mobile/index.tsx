@@ -33,10 +33,7 @@ export function MobileHeader() {
         oncloseModal={handleOpenMenu}
       />
       <header className="flex justify-between items-center pt-10 pb-4 px-5 border-b border-white-primary w-full">
-        <button
-          onClick={handleOpenMenu}
-          className="flex justify-center items-center w-8 h-8"
-        >
+        <button onClick={handleOpenMenu} className="flex items-center w-8 h-8">
           <List size={25} />
         </button>
 

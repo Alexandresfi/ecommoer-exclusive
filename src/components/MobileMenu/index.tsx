@@ -23,7 +23,7 @@ export function Menu({ oncloseModal, ...otherProps }: DialogProps) {
             >
               <li className="border-b-2 pb-4">
                 <Link href="/contact" prefetch={false}>
-                  Contado
+                  Contato
                 </Link>
               </li>
 
