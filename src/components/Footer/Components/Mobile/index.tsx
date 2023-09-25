@@ -1,12 +1,11 @@
 import Link from 'next/link';
-
-//ideia para resolver a quest;ao da setinha: criar um componente separado para summary e colocar um onClik para toda vez que for clicado aplicar uma className que gira 180° no after
+import './styles.css';
 
 export function FooterMobile() {
   return (
     <>
       <details className="w-full">
-        <summary className="bg-blue-600 flex justify-between after:content-['aparada']">
+        <summary className="flex justify-between items-center text-lg font-semibold uppercase">
           Suporte
         </summary>
         <nav>
@@ -38,10 +37,12 @@ export function FooterMobile() {
         </nav>
       </details>
 
-      <details>
-        <summary>Conta</summary>
+      <details className="w-full">
+        <summary className="flex justify-between items-center text-lg font-semibold uppercase">
+          Conta
+        </summary>
         <nav>
-          <ul className="space-y-3">
+          <ul className="space-y-3 mt-3">
             <li>
               <Link href="/account" prefetch={false}>
                 Minha conta
@@ -75,10 +76,12 @@ export function FooterMobile() {
         </nav>
       </details>
 
-      <details>
-        <summary>Acesso Rápido</summary>
+      <details className="w-full">
+        <summary className="flex justify-between items-center text-lg font-semibold uppercase">
+          Acesso Rápido
+        </summary>
         <nav>
-          <ul className="space-y-3">
+          <ul className="space-y-3 mt-3">
             <li>
               <Link href="/account" prefetch={false}>
                 Política de Privacidade

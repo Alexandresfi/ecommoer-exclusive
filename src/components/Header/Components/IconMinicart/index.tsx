@@ -10,7 +10,7 @@ export function IconMinicart({ handleOpenModal }: IconProps) {
   const { products } = UseMinicart();
   return (
     <button
-      className="flex justify-center relative items-center w-8 h-8"
+      className="flex justify-end relative w-8 h-8"
       onClick={handleOpenModal}
     >
       <ShoppingCart size={25} alt="open minicart" />

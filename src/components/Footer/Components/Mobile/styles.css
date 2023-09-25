@@ -1,0 +1,13 @@
+details summary::after {
+  content: '▼';
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+details[open] summary::after {
+  content: '▲';
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
