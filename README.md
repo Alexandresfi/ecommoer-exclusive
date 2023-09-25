@@ -5,9 +5,15 @@
     <p>Mercado pago</p>
  </h2>
  
- <p> 
-   Atualmente o projeto está em andamento.
- </p>
+ <div>
+    <p>
+      Atualmente o projeto está em andamento.
+    </p>
+   <p>
+      Mas o projeto já está em produção, caso queria prestigiar, <a href="https://ecommerce-exclusive.vercel.app/" target="_blank" >Acesso ao link</a>
+   </p>
+
+ </div>
 
 <h2> 
  funcionalidades ✅
@@ -21,6 +27,7 @@
 - <strong> `Simulador de Frete` (Finalizado) </strong>
 - <strong> `Minicart` (Finalizado) </strong>
 - <strong> `Página de contato` (Finalizado) </strong>
+- <strong> `Envio de E-mail` (Finalizado) </strong>
 - <strong> `Página de About us` (Finalizado) </strong>
 - <strong> `Página de WishList` (Finalizado) </strong>
 - <strong> `Header Mobile` (Finalizado) </strong>
