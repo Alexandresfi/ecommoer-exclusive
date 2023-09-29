@@ -79,7 +79,13 @@ export function ProductItem({
           prefetch={false}
         >
           <div className="h-64 lg:h-[278px] bg-white-primary m-auto flex items-center justify-center  w-full">
-            <Image src={thumbnail} width={172} height={180} alt={title} />
+            <Image
+              src={thumbnail}
+              width={172}
+              height={180}
+              alt={title}
+              unoptimized
+            />
           </div>
 
           <div>
