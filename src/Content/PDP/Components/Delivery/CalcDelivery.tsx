@@ -1,18 +1,27 @@
 'use client';
-import { getCodeName } from '@/utils/codeName';
+import { calcDays } from '@/utils/calcDays';
+import { formatPrices } from '@/utils/formatPrice';
 import { Truck } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 interface ResponseDelivery {
-  Codigo: string;
-  Valor: string;
-  PrazoEntrega: string;
-  Erro: string;
-  MsgErro?: string;
+  options: {
+    id: string;
+    name: string;
+    base_cost: string;
+    estimated_delivery_time: {
+      date: string;
+    };
+  }[];
+  message?: string;
 }
 
-export function CalcDelivery() {
-  const [deliveryValues, setDeliveryValues] = useState<ResponseDelivery[]>([]);
+interface IdProduct {
+  id: string;
+}
+
+export function CalcDelivery({ id }: IdProduct) {
+  const [deliveryValues, setDeliveryValues] = useState<ResponseDelivery>();
   const [loading, setLoading] = useState(false);
 
   function handleChange(value: string) {
@@ -27,31 +36,19 @@ export function CalcDelivery() {
     setLoading(true);
 
     try {
-      const data = {
-        cep
-      };
-
       const responseDelivery = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST_LOCAL}/api`,
+        `https://api.mercadolibre.com/items/${id}/shipping_options?zip_code=${cep}`,
         {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data),
           cache: 'no-store'
         }
       );
-
       const deliveryArray = await responseDelivery.json();
-      const deliveryData: ResponseDelivery[] = await deliveryArray.response;
-      console.log(deliveryArray, data);
+      const deliveryData: ResponseDelivery = await deliveryArray;
 
       if (!deliveryData) {
         alert(
           'A API que fornece os dados está enfrentando alguns problemas, por favor tente mais tarde!'
         );
-        // window.location.reload();
       } else {
         setLoading(false);
         setDeliveryValues(deliveryData);
@@ -88,27 +85,29 @@ export function CalcDelivery() {
           </label>
         </div>
       </div>
-      {deliveryValues?.length > 0 && deliveryValues[0]?.MsgErro ? (
+      {!deliveryValues?.message ? (
         <ul className="text-sm font-semibold pl-[46px]">
-          {deliveryValues?.map((item, index) => (
-            <>
-              <li key={index}>
-                <span>
-                  {item.Erro === '0' ? `${getCodeName(item.Codigo)}` : null}
-                </span>
-                <span>{item.Erro === '0' ? ` | R$ ${item.Valor} ` : null}</span>
-                <span className="font-normal text-green-500 block my-1">
-                  {item.Erro === '0'
-                    ? ` Receba em até: ${item.PrazoEntrega} dias`
-                    : null}
-                </span>
-              </li>
-            </>
+          {deliveryValues?.options?.map((item, index) => (
+            <li key={index}>
+              <span>{deliveryValues.message ? null : item.name}</span>
+              <span>
+                {deliveryValues.message
+                  ? null
+                  : ` | R$ ${formatPrices(Number(item.base_cost))} `}
+              </span>
+              <span className="font-normal text-green-500 block my-1">
+                {!deliveryValues.message
+                  ? ` Receba em até: ${calcDays(
+                      item.estimated_delivery_time.date
+                    )}`
+                  : null}
+              </span>
+            </li>
           ))}
         </ul>
       ) : (
         <>
-          {deliveryValues[0]?.MsgErro && (
+          {deliveryValues.message && (
             <p className="text-red-500 text-sm pl-[46px]">
               {' '}
               CEP inexistente. Por favor, verifica o CEP informado!

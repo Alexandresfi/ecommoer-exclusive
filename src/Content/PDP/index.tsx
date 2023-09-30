@@ -118,7 +118,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
           </p>
 
           <ActionsButton productData={productProps} />
-          <Delivery />
+          <Delivery id={id} />
         </div>
       </div>
 
