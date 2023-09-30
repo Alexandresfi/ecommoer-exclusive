@@ -3,11 +3,15 @@
 import { ArrowsCounterClockwise } from '@phosphor-icons/react';
 import { CalcDelivery } from './CalcDelivery';
 
-export function Delivery() {
+interface IdProps {
+  id: string;
+}
+
+export function Delivery({ id }: IdProps) {
   return (
     <ul className="border rounded">
       <li className="text-black px-4 py-6 border-b">
-        <CalcDelivery />
+        <CalcDelivery id={id} />
       </li>
 
       <li className="text-black flex px-4 py-6 items-center gap-4">
