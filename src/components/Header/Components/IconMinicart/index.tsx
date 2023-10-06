@@ -15,7 +15,7 @@ export function IconMinicart({ handleOpenModal }: IconProps) {
     >
       <ShoppingCart size={25} alt="open minicart" />
 
-      {products.length > 0 && (
+      {products?.length > 0 && (
         <span className="w-5 h-5 rounded-full text-white-default bg-orange-secondary absolute top-[-8px] right-[-2px] text-sm font-semibold text-center">
           {products.reduce((accumulator, currentValue) => {
             const quantity =

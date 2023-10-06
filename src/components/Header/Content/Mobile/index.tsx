@@ -30,6 +30,7 @@ export function MobileHeader() {
       <Menu
         open={openMenu}
         className="min-h-full ml-auto z-30 absolute top-0 bg-transparent w-full"
+        title="open-menu"
         oncloseModal={handleOpenMenu}
       />
       <header className="flex justify-between items-center pt-10 pb-4 px-5 border-b border-white-primary w-full">

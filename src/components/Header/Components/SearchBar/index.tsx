@@ -10,7 +10,7 @@ export function SearchInput() {
   const router = useRouter();
 
   function handleClick() {
-    const isName = name.length > 0;
+    const isName = name?.length > 0;
 
     if (isName && name !== '') {
       router.push(`/search/${name}`);

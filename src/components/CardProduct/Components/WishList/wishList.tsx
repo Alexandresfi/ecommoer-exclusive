@@ -21,7 +21,7 @@ export function WhishList({ product }: WishlistProps) {
   const { addProduct, deleteProduct, products } = UseWishlist();
 
   useEffect(() => {
-    products.length > 0 &&
+    products?.length > 0 &&
       products.find((item) => item.id === product.id) &&
       setChecked(true);
   }, [product.id, products]);

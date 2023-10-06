@@ -13,7 +13,9 @@ export function Menu({ oncloseModal, ...otherProps }: DialogProps) {
         <div className="bg-white-default rounded flex flex-col basis-4/5 px-5">
           <header className="flex justify-between items-center px-5 py-4">
             <span>Menu</span>
-            <button onClick={oncloseModal}>X</button>
+            <button onClick={oncloseModal} id="close-menu">
+              X
+            </button>
           </header>
 
           <nav>
@@ -51,6 +53,7 @@ export function Menu({ oncloseModal, ...otherProps }: DialogProps) {
         <div
           className="min-h-screen basis-1/5 bg-[#08080833]"
           onClick={oncloseModal}
+          id="close-menu-inside"
         />
       </div>
     </dialog>
