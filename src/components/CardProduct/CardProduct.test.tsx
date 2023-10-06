@@ -1,8 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { ProductItem } from '.';
-import { ImgHTMLAttributes } from 'react';
 
 interface ImgProps {
   src: string;
@@ -20,14 +19,15 @@ describe('CardProduct Component', () => {
     thumbnail: 'https://thumbnail-fake.pnj',
     title: 'title-fake',
     price: 150,
-    originalPrice: 200
+    originalPrice: 200,
+    reputation: 90
   };
 
   it('rendes Link product correctly', () => {
     render(<ProductItem productData={productData} />);
     expect(screen.getByRole('link', { current: false })).toHaveAttribute(
       'href',
-      `/product/${productData.title}`
+      `/product/${productData.id}-${productData.reputation}`
     );
   });
 
