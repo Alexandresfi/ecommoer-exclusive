@@ -62,7 +62,7 @@ Abra o git bash em uma pasta da sua escolha e execute o comando:
 git clone https://github.com/Alexandresfi/ecommoer-exclusive.git
 ```
 
-Em seguida vá para a pasta raiz do projeto abra o terminal e execute:
+Em seguida vá para a pasta raiz(ecommoer-exclusive) do projeto abra o terminal e execute:
 
 ```md
 yarn
