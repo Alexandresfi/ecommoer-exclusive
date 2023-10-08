@@ -37,7 +37,7 @@ export function SearchInput() {
           value={name}
           onKeyDown={handleKeyDown}
         />
-        <button onClick={handleClick}>
+        <button onClick={handleClick} data-testid="button-search">
           <MagnifyingGlass size={25} />
         </button>
       </div>
