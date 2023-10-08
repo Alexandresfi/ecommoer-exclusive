@@ -42,7 +42,7 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
         <div
           className="min-h-screen basis-1/5 xl:basis-4/5 bg-[#08080833]"
           onClick={oncloseModal}
-          id="close-minicart-outside"
+          data-testid="close-minicart-outside"
         />
         <div className="bg-white-default rounded flex flex-col justify-between basis-4/5 px-5 xl:basis-1/5">
           <Header oncloseModal={oncloseModal} />
@@ -55,7 +55,7 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
 
           {!minicartEmpaty && (
             <article className="h-full space-y-4 cursor-pointer">
-              {products?.map((product) => (
+              {products?.map((product, index) => (
                 <div key={product.id} className="flex gap-2">
                   <div className="w-[135px] h-[92px]">
                     <Image
@@ -99,6 +99,7 @@ export function Minicart({ oncloseModal, ...otherProps }: DialogProps) {
                   </div>
                   <button
                     className="font-sembold h-5"
+                    data-testid={`delete-product-button-${index}`}
                     onClick={() => deleteProduct(product.id)}
                   >
                     X

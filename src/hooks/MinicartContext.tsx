@@ -23,7 +23,7 @@ interface ProductData {
   reputation: number;
 }
 
-interface MinicartData {
+export interface MinicartData {
   addProduct: (item: ProductData) => void;
   deleteProduct: (id: string) => void;
   updateQuantity: (quantity: QuantityProps) => void;

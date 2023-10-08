@@ -8,7 +8,7 @@ export function Header({ oncloseModal }: CloseModalProps) {
       <button
         className="font-semibold"
         onClick={oncloseModal}
-        id="close-minicart-inside"
+        data-testid="close-minicart-inside"
       >
         X
       </button>
