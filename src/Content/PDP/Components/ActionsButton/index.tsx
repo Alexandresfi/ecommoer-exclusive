@@ -5,6 +5,7 @@ import { Quantity } from '../Quantity';
 
 import { WhishListPDP } from '../WishList';
 import { BuyButton } from '@/components/BuyButton';
+import { ShoppingCart } from '@phosphor-icons/react';
 
 export interface ProductProps {
   productData: {
@@ -25,11 +26,11 @@ export function ActionsButton({ productData }: ProductProps) {
       <Quantity quantity={quantity} setQuantity={setQuantity} />
       <BuyButton
         productData={productData}
-        isPDP
         quantity={quantity}
         className="w-[165px] h-[44px] bg-orange-secondary text-white-default text-center font-medium text-base hover:bg-orange-secondary-hover rounded"
-        text="Compre Agora"
-      />
+      >
+        <span>Compre Agora!</span>
+      </BuyButton>
       <WhishListPDP />
     </div>
   );

@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ShoppingCart } from '@phosphor-icons/react';
 
 import { WhishList } from './Components/WishList/wishList';
 
 import { formatPrices } from '@/utils/formatPrice';
 import { Rating } from '../Rating';
-import './styles.css';
 import { BuyButton } from '../BuyButton';
+
+import './styles.css';
 
 interface ProducProps {
   productData: {
@@ -66,11 +68,12 @@ export function ProductItem({
           <WhishList product={productBuyButton} />
         </div>
         <BuyButton
-          text="Add ao Carrinho"
-          isPDP={false}
           productData={productBuyButton}
-          className={`text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px]  md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300 ${isContentPage}`}
-        />
+          className={`text-base font-medium text-white-default bg-black flex items-center justify-center h-[41px] md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] w-full rounded absolute top-[145px] lg:top-[205px] lg:opacity-0 transition-opacity duration-300 ${isContentPage}`}
+        >
+          <ShoppingCart color="#fff" size={24} />
+          <span>Add Carrinho</span>
+        </BuyButton>
         <Link
           href={`/product/${id}-${reputation}`}
           className={`md:max-w-[200px] lg:max-w-[249px] xl:max-w-[270px] lg:h-[350px] flex flex-col gap-4 ${isContentPage} ${
