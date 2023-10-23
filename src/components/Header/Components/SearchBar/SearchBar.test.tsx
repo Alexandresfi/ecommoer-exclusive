@@ -4,7 +4,7 @@ import { SearchInput } from '.';
 import { useRouter } from 'next/navigation';
 
 jest.mock('next/navigation');
-const useRouterMocked = jest.mocked<() => any>(useRouter);
+const useRouterMocked = jest.mocked(useRouter);
 
 describe('Search Component', () => {
   it('Rendes input and button correctly', () => {
@@ -20,7 +20,7 @@ describe('Search Component', () => {
     const mockPush = jest.fn();
     useRouterMocked.mockReturnValueOnce({
       push: mockPush
-    });
+    } as any);
 
     render(<SearchInput />);
 
@@ -35,7 +35,7 @@ describe('Search Component', () => {
     const mockPush = jest.fn();
     useRouterMocked.mockReturnValue({
       push: mockPush
-    });
+    } as any);
 
     render(<SearchInput />);
 
@@ -52,7 +52,7 @@ describe('Search Component', () => {
     const mockPush = jest.fn();
     useRouterMocked.mockReturnValueOnce({
       push: mockPush
-    });
+    } as any);
 
     render(<SearchInput />);
 
