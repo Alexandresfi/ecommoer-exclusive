@@ -16,9 +16,11 @@ export function UseAddMinicart(
 ) {
   const { addProduct, updateQuantity, products } = UseMinicart();
 
-  const index = products?.findIndex((item) => item.id === product?.id);
+  const productAdded = products?.findIndex((item) =>
+    item.id === product?.id ? true : false
+  );
 
-  if (index >= 0) {
+  if (productAdded) {
     const productQuantity = {
       id: product.id,
       quantity: (product.quantity += 1)

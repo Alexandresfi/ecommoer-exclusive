@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 
-import { Rating } from '@/components/Rating';
+// import { Rating } from '@/components/Rating';
 import { Shelf } from '@/components/Shelfies';
 import { formatPrices } from '@/utils/formatPrice';
 import { BreadBrumb } from '@/components/BreadCrumb';
@@ -23,24 +23,22 @@ interface Props {
 }
 
 interface ProductData {
-  body: {
-    id: string;
-    title: string;
-    price: number;
-    original_price: number;
-    warranty: string;
-    condition: string;
-    attributes: {
-      name: string;
-      value_name: string;
-    }[];
-    pictures: {
-      url: string;
-    }[];
-    status: string;
-    domain_id: string;
-    category_id: string;
-  };
+  id: string;
+  title: string;
+  price: number;
+  original_price: number;
+  warranty: string;
+  condition: string;
+  attributes: {
+    name: string;
+    value_name: string;
+  }[];
+  pictures: {
+    url: string;
+  }[];
+  status: string;
+  domain_id: string;
+  category_id: string;
 }
 
 interface DescriptionProps {
@@ -49,7 +47,7 @@ interface DescriptionProps {
 
 export async function ContainerPDP({ id, reputation }: Props) {
   const [responseProduct, responseDescription] = await Promise.all([
-    fetch(`https://api.mercadolibre.com/items?ids=${id}`, {
+    fetch(`https://api.mercadolibre.com/items/${id}`, {
       cache: 'no-store'
     }),
     fetch(`https://api.mercadolibre.com/items/${id}/description`, {
@@ -57,9 +55,9 @@ export async function ContainerPDP({ id, reputation }: Props) {
     })
   ]);
 
-  const productData: ProductData[] = await responseProduct.json();
+  const productData: ProductData = await responseProduct.json();
 
-  const { body: product } = productData[0];
+  const product = productData;
 
   const { plain_text: description }: DescriptionProps =
     await responseDescription.json();
@@ -90,7 +88,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
           </h1>
 
           <div className="flex items-center gap-4">
-            <Rating rating={reputation} />
+            {/* <Rating rating={reputation} /> */}
 
             <span className=" text-green-500 text-sm opacity-60 before:content-['|'] before:mr-4 before:text-white-secondary before:opacity-100 before:font-bold">
               {product.status === 'active' || product.status === 'paused'
