@@ -12,7 +12,7 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
     `https://api.mercadolibre.com/sites/MLB/search?${productLink.replace(
       /%3D/gi,
       '='
-    )}&limit=50`,
+    )}&limit=30`,
     {
       cache: 'no-store'
     }
@@ -24,6 +24,8 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
   if (productData.length < 1) {
     return <NotFound productName={productLink} />;
   }
+
+  console.log('teste: ');
 
   return (
     <div>
@@ -38,7 +40,7 @@ export async function ContainerCategory({ productLink }: CategoryProps) {
             price: product?.price,
             originalPrice: product?.original_price,
             reputation:
-              product?.seller.seller_reputation.transactions.ratings.positive
+              product?.seller?.seller_reputation?.transactions.ratings.positive
           };
           return (
             <li key={product.id}>

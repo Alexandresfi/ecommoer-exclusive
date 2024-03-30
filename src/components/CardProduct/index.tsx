@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart } from '@phosphor-icons/react';
@@ -5,7 +7,7 @@ import { ShoppingCart } from '@phosphor-icons/react';
 import { WhishList } from './Components/WishList/wishList';
 
 import { formatPrices } from '@/utils/formatPrice';
-import { Rating } from '../Rating';
+// import { Rating } from '../Rating';
 import { BuyButton } from '../BuyButton';
 
 import './styles.css';
@@ -111,9 +113,7 @@ export function ProductItem({
               )}
             </span>
           </div>
-          <div>
-            <Rating rating={reputation * 100} />
-          </div>
+          <div>{/* <Rating rating={reputation * 100} /> */}</div>
         </Link>
       </div>
     </article>

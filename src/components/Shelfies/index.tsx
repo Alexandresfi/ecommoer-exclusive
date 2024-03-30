@@ -12,9 +12,9 @@ interface SearchProps {
 
 export interface ProductDataProps {
   id: string;
+  title: string;
   condition: string;
   thumbnail: string;
-  title: string;
   price: number;
   original_price: number;
   seller: {

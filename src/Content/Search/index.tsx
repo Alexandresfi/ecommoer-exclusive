@@ -39,7 +39,7 @@ export async function ContainerResultSearch({ productName }: ResultProps) {
             price: product?.price,
             originalPrice: product?.original_price,
             reputation:
-              product?.seller.seller_reputation.transactions.ratings.positive
+              product?.seller.seller_reputation?.transactions.ratings.positive
           };
           return (
             <li key={product.id}>
