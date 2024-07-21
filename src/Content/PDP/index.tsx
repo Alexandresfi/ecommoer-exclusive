@@ -11,6 +11,7 @@ import { DataSheet } from './Components/Datarasheet';
 
 import './styles.css';
 import { ActionsButton } from './Components/ActionsButton';
+import { Rating } from '@/components/Rating';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -88,7 +89,7 @@ export async function ContainerPDP({ id, reputation }: Props) {
           </h1>
 
           <div className="flex items-center gap-4">
-            {/* <Rating rating={reputation} /> */}
+            <Rating rating={reputation} />
 
             <span className=" text-green-500 text-sm opacity-60 before:content-['|'] before:mr-4 before:text-white-secondary before:opacity-100 before:font-bold">
               {product.status === 'active' || product.status === 'paused'
