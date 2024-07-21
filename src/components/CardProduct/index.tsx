@@ -11,6 +11,7 @@ import { formatPrices } from '@/utils/formatPrice';
 import { BuyButton } from '../BuyButton';
 
 import './styles.css';
+import { Rating } from '../Rating';
 
 interface ProducProps {
   productData: {
@@ -113,7 +114,10 @@ export function ProductItem({
               )}
             </span>
           </div>
-          <div>{/* <Rating rating={reputation * 100} /> */}</div>
+          <div>
+            {' '}
+            <Rating rating={reputation * 100} />{' '}
+          </div>
         </Link>
       </div>
     </article>
