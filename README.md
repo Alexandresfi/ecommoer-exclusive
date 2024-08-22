@@ -5,9 +5,15 @@
     <p>Mercado pago</p>
  </h2>
  
- <p> 
-   Atualmente o projeto está em andamento.
- </p>
+ <div>
+    <p>
+      Atualmente o projeto está em andamento. Basta criar as páginas de My Account e o Login social.
+    </p>
+   <p>
+      Mas o projeto já está em produção, caso queria prestigiar, <a href="https://ecommerce-exclusive.vercel.app/" target="_blank" >Acesso ao link</a>
+   </p>
+
+ </div>
 
 <h2> 
  funcionalidades ✅
@@ -18,9 +24,10 @@
 - <strong> `Página de Produto (PDP)` (Finalizado)</strong>
 - <strong> `Página de Resultado de busca` (Finalizado)</strong>
 - <strong> `Página de Resultado de categoria` (Finalizado)</strong>
-- <strong> `Simulador de Frete` (Finalizado) </strong>
+- <strong> `Simulador de Frete e estimativa de entrega` (Finalizado) </strong>
 - <strong> `Minicart` (Finalizado) </strong>
 - <strong> `Página de contato` (Finalizado) </strong>
+- <strong> `Envio de E-mail` (Finalizado) </strong>
 - <strong> `Página de About us` (Finalizado) </strong>
 - <strong> `Página de WishList` (Finalizado) </strong>
 - <strong> `Header Mobile` (Finalizado) </strong>
@@ -55,13 +62,23 @@ Abra o git bash em uma pasta da sua escolha e execute o comando:
 git clone https://github.com/Alexandresfi/ecommoer-exclusive.git
 ```
 
-Em seguida vá para a pasta raiz do projeto abra o terminal e execute:
+Em seguida vá para a pasta raiz (ecommoer-exclusive) do projeto abra o terminal e execute:
 
 ```md
 yarn
 ```
 
 para instalar as dependências, logo em seguida execute o comando:
+
+```md
+yarn dev
+```
+
+para usar o recurso de envio de email, você precisará seguir alguns passos:
+
+- Criar um arquivo na raiz do projeto, com nome `.env.local`.
+- Criar as seguintes variáveis: `USER_GMAIL`, `PASS_GMAIL` para obter estes valores, assista este <a href="https://www.youtube.com/watch?v=5Vxmsc7rSJc"> tutorial </a>.
+- Por último crie mais uma variável: `NEXT_PUBLIC_HOST_LOCAL`, este o valor é `http://localhost:3000` caso você use outro porta, basta fazer a alteração.
 
 ```md
 yarn dev
