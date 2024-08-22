@@ -1,7 +1,7 @@
 'use client';
 
-import { ButtonHTMLAttributes, ReactNode } from 'react';
-import { UseAddMinicart } from '@/hooks/UseAddMinicart';
+import { ButtonHTMLAttributes } from 'react';
+import { UseMinicart } from '@/hooks/MinicartContext';
 
 interface ProductDataBuyButton {
   id: string;
@@ -19,11 +19,37 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function BuyButton({ quantity, productData, ...res }: ButtonProps) {
+  const { products, addProduct, updateQuantity } = UseMinicart();
+
+  const productAdded = products?.findIndex((item) =>
+    item.id === productData?.id ? true : false
+  );
+
+  function handleAddProduct() {
+    productData.quantity = quantity ? quantity : 1;
+    addProduct(productData);
+  }
+
+  function handleUpdateQuantity() {
+    const productQuantity = {
+      id: productData.id,
+      quantity: (productData.quantity += 1)
+    };
+
+    updateQuantity(productQuantity);
+  }
+
   return (
     <button
       type="button"
       {...res}
-      onClick={() => UseAddMinicart(productData, quantity)}
+      onClick={() => {
+        if (productAdded > 0) {
+          handleUpdateQuantity();
+        } else {
+          handleAddProduct();
+        }
+      }}
     >
       {res.children}
     </button>
