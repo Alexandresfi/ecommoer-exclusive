@@ -25,18 +25,19 @@ export function Rating({ rating }: RatingProps) {
 
   function createStartArray() {
     const { intPart, decimalPart } = calcRating(rating);
+    if (!(Number.isNaN(intPart) && Number.isNaN(decimalPart))) {
+      const starArray = [
+        ...Array(intPart).fill(CompletStar),
+        ...(decimalPart > 0 ? [PartStar] : []),
+        ...Array(Math.max(0, 5 - intPart - (decimalPart > 0 ? 1 : 0))).fill(
+          EmptyStar
+        )
+      ];
 
-    const starArray = [
-      ...Array(intPart).fill(CompletStar),
-      ...(decimalPart > 0 ? [PartStar] : []),
-      ...Array(Math.max(0, 5 - intPart - (decimalPart > 0 ? 1 : 0))).fill(
-        EmptyStar
-      )
-    ];
+      starArray.length > 5 && starArray.pop();
 
-    starArray.length > 5 && starArray.pop();
-
-    return starArray;
+      return starArray;
+    }
   }
 
   return (
