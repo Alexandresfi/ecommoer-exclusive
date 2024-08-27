@@ -88,7 +88,6 @@ export function Carousel({ productData, offer }: ProductDataItemProps) {
             reputation:
               product?.seller.seller_reputation?.transactions.ratings.positive
           };
-
           return (
             <ProductItem
               productData={productDataItem}

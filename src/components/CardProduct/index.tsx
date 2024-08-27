@@ -116,7 +116,9 @@ export function ProductItem({
           </div>
           <div>
             {' '}
-            <Rating rating={reputation * 100} />{' '}
+            {productBuyButton.reputation && (
+              <Rating rating={reputation * 100} />
+            )}
           </div>
         </Link>
       </div>
